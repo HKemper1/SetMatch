@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Regestrierung</title>
+</head>
+<body>
+<h2>SetMatch</h2>
+
+<form>
+  <div>
+    <label for="teamname">Teamname</label>
+    <div>
+      <input type="text" id="teamname" name="teamname" maxlength="100" required>
+    </div>
+  </div>
+  <div>
+    <label for="email">E-Mail</label>
+    <div>
+      <input type="email" id="email" name="email" maxlength="100" required>
+    </div>
+  </div>
+
+  <div>
+    <label for="password">Kennwort</label>
+    <div>
+      <input type="password" id="password" name="password" minlength="8" maxlength="100" required>
+    </div>
+  </div>
+
+  <div>
+    <label for="password_repeat">Kennwort wiederholen:</label>
+    <div>
+      <input type="password" id="password_repeat" name="password_repeat" minlength="8" maxlength="100"
+             required>
+    </div>
+  </div>
+
+  <div>
+    <button type="submit">Registrieren</button>
+    <button type="submit">Anmelden</button>
+  </div>
+</form>
+</body>
+</html>
