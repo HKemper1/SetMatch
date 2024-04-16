@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anmeldung</title>
+</head>
+<body>
+    <section>
+        <h2>Anmelden</h2>
+
+        <form action="index.php" method="POST">
+            <div>
+                <label for="teamname">Teamname</label>
+                <div>
+                    <input type="text" id="teamname" name="teamname" maxlength="100" required>
+                </div>
+            </div>
+            <div>
+                <label for="password">Passwort:</label>
+                <div>
+                    <input type="password" id="password" name="password" maxlength="100" required>
+                </div>
+            </div>
+            <div>
+                <button type="submit">Anmelden</button>
+                <button type="submit">Registrieren</button>
+            </div>
+        </form>
+
+    </section>
+</body>
+</html>
