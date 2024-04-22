@@ -1,0 +1,25 @@
+:root{
+    --primary-color: #c0bbaa;
+    --secondary-color: #b4b391;
+    --footer-color: #989793;
+    --button-color: #ada99f;
+    --button-hover-color: #a1a197;
+    --fist-color: white;
+    --second-color: black;
+}
+body {
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--second-color);
+    background: var(--fist-color);
+}
+.footer {
+    position:fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background: #91866e;
+    color: #000000;
+    height: auto;
+}
