@@ -1,15 +1,9 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anmeldung</title>
-</head>
+<?php include_once "php/head.php" ?>
 <body>
     <section>
         <h2>Anmelden</h2>
 
-        <form action="index.html" method="POST">
+        <form action="index.php" method="POST">
             <div>
                 <label for="teamname">Teamname</label>
                 <div>
@@ -23,7 +17,7 @@
                 </div>
             </div>
             <div>
-                <a href="registrierung.html" class="button">Registrieren</a>
+                <a href="registrierung.php" class="button">Registrieren</a>
                 <button type="submit">Anmelden</button>
             </div>
         </form>

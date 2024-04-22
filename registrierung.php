@@ -1,10 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Registrierung</title>
-</head>
+<?php include_once "php/head.php" ?>
+
 <body>
 <h2>Registrierung</h2>
 
@@ -38,7 +33,7 @@
   </div>
 
   <div>
-    <a href="anmeldung.html" class="button">Anmeldung</a>
+    <a href="anmeldung.php" class="button">Anmeldung</a>
     <button type="submit">Registrieren</button>
   </div>
 </form>

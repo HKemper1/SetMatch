@@ -1,27 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Startseite</title>
-</head>
-<body>
-    <nav> 
-        <a href="index.html">  Startseite</a>
-        <a href="teamseite.html"> Teamseite</a>
-        <a href="anmeldung.html"> Anmeldung</a>
-        <a href="registrierung.html"> Regestrierung</a>
+<?php include_once "php/head.php" ?>
 
-        <a> <label for="suchen">Suchen
-            <input id="suchen" type="text"
-            name="suchen" size="10"
-            maxlength="30" value="Suchen">
-            </label></a>
-        <a> <img src="Post.PNG" alt="Post"
-            width="40" height="30"></a>
-        <a> <img src="Mensch.png" alt="Profil"
-                width="40" height="40"></a>
-    </nav>
+<body>
+<?php include_once "php/nav.php" ?>
+
         <iframe src="https://www.nwvv.de/cms/home/spielbetrieb/m_ligen/vl.xhtml?LeaguePresenter.view=resultTable&LeaguePresenter.matchSeriesId=36634909#samsCmsComponent_436163"
          width="20%" height="400px" ></iframe>
          <br>
@@ -108,11 +89,7 @@
 
 
 
-    <footer>
-        <a href="impressum.html">Impressum</a>
-        <a href="datenschutz.html">Datenschutz</a>
-        <a href="nutzerbedingungen.html">Nutzungsbedingungen</a>
+<?php include_once "php/footer.php" ?>
 
-    </footer>
 </body>
 </html>
