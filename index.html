@@ -18,12 +18,13 @@
             <a href="teamseite.html">Teamseite</a>
             <a href="anmeldung.html"> Anmeldung</a>
             <a href="registrierung.html"> Regestrierung</a>
+            <form id="form" method="post">>
             <a><label for="suchen">Suchen
                 <input id="suchen" type="text"
                        name="suchen" size="10"
                        maxlength="30" value="Suchen">
             </label></a>
-            
+            </form>
             <a> <img src="images/teamseite/glocke.png" alt="Post"
                      width="16" height="16"></a>
             <a> <img src="images/teamseite/nutzer.png" alt="Profil"
@@ -35,20 +36,17 @@
           <div class="flex-grid">
             <div class="left-column">
                 <iframe src="https://www.nwvv.de/cms/home/spielbetrieb/m_ligen/vl.xhtml?LeaguePresenter.view=resultTable&LeaguePresenter.matchSeriesId=36634909#samsCmsComponent_436163"></iframe>
-              <div class="item">
-                <label>
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam 
-                    nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
-                    sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-                     Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                       invidunt ut labore et dolore magna aliquyam erat, 
-                    sed diam voluptua. At vero eos et accusam et justo duo dolores
-                     et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                </label>
-                <button>
-                    Spielanfrage Stellen
-                </button>
+                <form>
+                    <div class="item">
+                      <div class="spielanfrageContainer">
+                          <textarea name="textarea" required>
+                              Hier kann mehrzeiliger Text eingegeben werden.
+                          </textarea>
+                          <button type="submit">
+                              Spielanfrage Stellen
+                          </button>
+                      </div>
+                   </form>
               </div>
             </div>
             <div class="right-column">
@@ -100,12 +98,15 @@
                     </div>
                 </section>
                 <div>
+                    <form id="form" method="post" req>
                     <h2>Neuer Beitrag</h2>
                         <h4>Beschreibung:</h4>
-                        <label for="text"></label><textarea id="text" name="text" cols="100" rows="10"
-                                                            maxlength="1000"></textarea>
+                        <label for="text"></label>
+                        <textarea id="text" name="text" cols="100" rows="10"
+                         maxlength="1000" required></textarea>
     
                         <input type="submit" class="button" id="beitrag" name="beitrag" value="Veröffentlichen">
+                    </form>
                 </div>
               </div>
               </div>
