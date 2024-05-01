@@ -14,7 +14,7 @@ header {
   
   nav {
     display: flex;
-    align-items: center; /* Zentriert die Elemente vertikal */
+    align-items: center; 
     justify-content: space-between;
     font-size: 20px;
   }
@@ -98,16 +98,16 @@ input[type="password"]:focus {
 
 button[type="submit"]{
     display: inline-block;
-    padding: 10px 20px; /* Gleiche Padding-Werte für beide Buttons */
+    padding: 10px 20px; 
     background-color: #007bff;
     color: #fff;
     text-decoration: none;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-right: 10px; /* Optional: Abstand zwischen den Buttons */
-    width: auto; /* Setze die Breite auf automatisch */
-    box-sizing: border-box; /* Behalte das Padding in der Breite bei */
+    margin-right: 10px; 
+    width: auto; 
+    box-sizing: border-box; 
 }
 
 button[type="submit"]:hover {
