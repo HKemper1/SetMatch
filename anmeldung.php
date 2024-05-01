@@ -1,7 +1,9 @@
 <?php include_once "php/head.php" ?>
-<body>
+<body xmlns="http://www.w3.org/1999/html">
+<main>
+    <div class="container">
     <section>
-        <h2>Anmelden</h2>
+        <h1>Anmelden</h1>
 
         <form action="index.php" method="POST">
             <div>
@@ -18,10 +20,14 @@
             </div>
             <div>
                 <a href="registrierung.php" class="button">Registrieren</a>
-                <button type="submit">Anmelden</button>
+                <button class="button" type="submit">Anmelden </button>
             </div>
         </form>
 
     </section>
+    </div>
+</main>
+<?php include_once "php/footer.php" ?>
 </body>
+
 </html>

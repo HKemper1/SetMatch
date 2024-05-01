@@ -1,7 +1,9 @@
 <?php include_once "php/head.php" ?>
 
 <body>
-<h2>Registrierung</h2>
+<main>
+<div class="container">
+<h1>Registrierung</h1>
 
 <form>
   <div>
@@ -34,8 +36,11 @@
 
   <div>
     <a href="anmeldung.php" class="button">Anmeldung</a>
-    <button type="submit">Registrieren</button>
+    <button class="button" type="submit">Registrieren</button>
   </div>
 </form>
+</div>
+</main>
+<?php include_once "php/footer.php" ?>
 </body>
 </html>
