@@ -1,79 +1,76 @@
 /* Setup header */
 header {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: 20px;
-    margin-right: 20px; 
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #99BC85;
-    justify-content: flex-start;
-    text-align: right;
-    flex: 0 0 auto;
-    max-height: 20px; 
-  }
-  
-  nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 20px;
-  }
-  
-  nav input[type="text"] {
-    width: 150px;
-    padding: 5px;
-    margin: 10px 0 0;
-  }
-  
-  nav a {
-    margin-right: 20px;
-    text-decoration: none;
-    color: black;
-  }
-  
-  nav img {
-    margin-right: 10px;
-  }
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px; 
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #99BC85;
+  justify-content: flex-start;
+  text-align: right;
+  flex: 0 0 auto;
+  max-height: 20px; 
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 20px;
+}
+
+nav input[type="text"] {
+  width: 150px;
+  padding: 5px;
+  margin: 10px 0 0;
+}
+
+nav a {
+  margin-right: 20px;
+  text-decoration: none;
+  color: black;
+}
+
+nav img {
+  margin-right: 10px;
+}
 
 
-  /* Setup Footer */
+/* Setup Footer */
 footer {
-    background-color: #99BC85;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    text-align: right;
-    margin-top: 20px;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-bottom: 20px;
-    flex: 0 0 auto;
-  }
-  
-  footer a {
-    margin-right: 20px;
-    text-decoration: none;
-    color: black; 
-  }
+  background-color: #99BC85;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: right;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  flex: 0 0 auto;
+}
 
- /* Styles für den Hauptinhalt */
+footer a {
+  margin-right: 20px;
+  text-decoration: none;
+  color: black; 
+}
+
+/* Styles für den Hauptinhalt */
 main {
-    padding: 20px;
-    text-align: center;
+  padding: 20px;
+  text-align: center;
 }
 h1 {
-    margin-top: 30px;
+  margin-top: 30px;
 }
 
 p {
-    margin: 20px;
-    max-width: 1600px;
+  margin: 20px;
+  max-width: 1600px;
 }
-
-
-  
