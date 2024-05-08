@@ -1,4 +1,12 @@
 <?php include_once "php/head.php" ?>
+
+//TODO erstmal nur die Variablen 
+$teamname;
+$passwort;
+
+<?php
+require_once $abs_path . "/php/include/head.php";
+?>
 <body xmlns="http://www.w3.org/1999/html">
 <main>
     <div class="container">
