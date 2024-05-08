@@ -1,15 +1,11 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anmeldung</title>
-</head>
-<body>
+<?php include_once "php/head.php" ?>
+<body xmlns="http://www.w3.org/1999/html">
+<main>
+    <div class="container">
     <section>
-        <h2>Anmelden</h2>
+        <h1>Anmelden</h1>
 
-        <form action="index.html" method="POST">
+        <form action="index.php" method="POST">
             <div>
                 <label for="teamname">Teamname</label>
                 <div>
@@ -23,11 +19,15 @@
                 </div>
             </div>
             <div>
-                <a href="registrierung.html" class="button">Registrieren</a>
-                <button type="submit">Anmelden</button>
+                <a href="registrierung.php" class="button">Registrieren</a>
+                <button class="button" type="submit">Anmelden </button>
             </div>
         </form>
 
     </section>
+    </div>
+</main>
+<?php include_once "php/footer.php" ?>
 </body>
+
 </html>

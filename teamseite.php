@@ -1,32 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Startseite</title>
-</head>
+<?php include_once "php/head.php" ?>
+
 <body>
-<nav>
-    <a href="index.html">  Startseite</a>
-    <a href="teamseite.html">Teamseite</a>
-    <a href="anmeldung.html"> Anmeldung</a>
-    <a href="registrierung.html"> Regestrierung</a>
-    <a> <label for="suchen">Suchen
-        <input id="suchen" type="text"
-               name="suchen" size="10"
-               maxlength="30" value="Suchen">
-    </label></a>
-    <a> <img src="Post.PNG" alt="Post"
-             width="40" height="30"></a>
-    <a> <img src="Mensch.png" alt="Profil"
-             width="40" height="40"></a>
-</nav>
-<aside>
+
+<?php include_once "php/nav.php" ?>
+
+<main>
+
+    <section class="box">
     <iframe src="https://www.nwvv.de/cms/home/spielbetrieb/m_ligen/vl.xhtml?LeaguePresenter.view=resultTable&LeaguePresenter.matchSeriesId=36634909#samsCmsComponent_436163"
-            width="20%" height="400px" ></iframe>
+            width="100%" height="450" style="border:0;" allowfullscreen="" ></iframe>
     <br>
+    </section>
+    <section class="box">
     <label>
-        Hier werden die Testspielanfragen dargestellt.
+        <h2> Hier werden die Testspielanfragen dargestellt.</h2>
         <br>
         <label>
             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
@@ -39,16 +26,16 @@
             et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
         </label>
         <br>
-        <button>
-            Spielanfrage Stellen
-        </button>
+        <input type="submit" class="button" id="anfrage" name="anfrage" value="Anfrage stellen">
     </label>
-</aside>
-<article>
-    <img src="Mannschaft.png" alt="Mannschaftsbild"
+    </section>
+
+    <section class="box">
+
+    <img src="images/Mannschaft.PNG" alt="Mannschaftsbild"
          width="150" height="100">
     <br>
-    <section>
+    <div>
         <label>
             Hier stehen Manschaftsinformationen <br>
             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
@@ -60,64 +47,66 @@
             sed diam voluptua. At vero eos et accusam et justo duo dolores
             et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
         </label>
-    </section>
-    <section>
+    </div>
+    <div>
         <label>
             Starspieler <br>
-            <img src="Mensch.png" alt="Starspieler"
+            <img src="images/Mensch.PNG" alt="Starspieler"
                  width="40" height="40">
 
         </label>
+    </div>
     </section>
-
-</article>
+        <section class="box">
 <div>
-    <img src="Stern.png" alt="Stern"
+    <img src="images/Stern.PNG" alt="Stern"
          width="200" height="40">
     <Label>
         Angriff
     </Label>
     <br>
-    <img src="Stern.png" alt="Stern"
+    <img src="images/Stern.PNG" alt="Stern"
          width="200" height="40">
     <Label>
         Verteidigung
     </Label>
     <br>
-    <img src="Stern.png" alt="Stern"
+    <img src="images/Stern.PNG" alt="Stern"
          width="200" height="40">
     <Label>
         Orga
     </Label>
     <br>
-    <img src="Stern.png" alt="Stern"
+    <img src="images/Stern.PNG" alt="Stern"
          width="200" height="40">
     <Label>
         Zuverlässigkeit
     </Label>
     <br>
 </div>
+        </section>
+
+        <section class="box">
 
 <div>
     <label>
         Spielfeld
     </label>
     <br>
-    <img src="Mensch.png" alt="Außen" width="40" height="40">
-    <img src="Mensch.png" alt="Mitte" width="40" height="40">
-    <img src="Mensch.png" alt="Zuspieler" width="40" height="40">
+    <img src="images/Mensch.PNG" alt="Außen" width="40" height="40">
+    <img src="images/Mensch.PNG" alt="Mitte" width="40" height="40">
+    <img src="images/Mensch.PNG" alt="Zuspieler" width="40" height="40">
     <br>
-    <img src="Mensch.png" alt="Außen" width="40" height="40">
-    <img src="Mensch.png" alt="Libero" width="40" height="40">
-    <img src="Mensch.png" alt="Diagonal" width="40" height="40">
+    <img src="images/Mensch.PNG" alt="Außen" width="40" height="40">
+    <img src="images/Mensch.PNG" alt="Libero" width="40" height="40">
+    <img src="images/Mensch.PNG" alt="Diagonal" width="40" height="40">
     <br>
-    <img src="Mensch.png" alt="Trainer" width="40" height="40">
+    <img src="images/Mensch.PNG" alt="Trainer" width="40" height="40">
 </div>
-<footer>
-    <a href="impressum.html">Impressum</a>
-    <a href="datenschutz.html">Datenschutz</a>
-    <a href="nutzerbedingungen.html">Nutzungsbedingungen</a>
+        </section>
 
-</footer>
+</main>
+<?php include_once "php/footer.php" ?>
+
 </body>
 </html>
