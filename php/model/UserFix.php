@@ -1,7 +1,7 @@
 <?php
 require_once "User.php";
 require_once "GaestebuchDAO.php";
-class UserFix implements User
+class UserFix 
 {
     private static $instance = null;
     public static function getInstance()
@@ -21,6 +21,7 @@ class UserFix implements User
         $this->users[2] = new User(2, "Team 3", "email3@test.de", "passwort3");
     }
 
+    
     public function neuerUser($team, $email, $text)
     {
         // nur dummy
@@ -46,7 +47,7 @@ class UserFix implements User
         foreach ($this->users as $user) {
             if ($user->getTeamname() === $teamname) {
                 // Wenn die teamname übereinstimmt, überprüfe das Passwort
-                if ($user->getKennwort() === $password) {
+                if ($user->getPassword() === $password) {
                     // Wenn das Passwort übereinstimmt, gib den Benutzer zurück
                     return $user;
                 } else {
