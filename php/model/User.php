@@ -2,16 +2,17 @@
 class User
 
 {   
-    private $id
-    private $teamname
-    private $email
-    private $kennwort
+    private $id;
+    private $teamname;
+    private $email;
+    private $kennwort;
 
     public function __construct($id, $teamname, $email, $kennwort)
     {
         $this->id = $id;
-        $this->ueberschrift = $email;
-        $this->email = $kennwort;
+        $this->email = $email;
+        $this->teamname = $teamname;
+        $this->kennwort = $kennwort;
     }
 
     public function getId() {
