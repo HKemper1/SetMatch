@@ -7,10 +7,10 @@
     }
     interface NachrichtDAO
     {
-	//TODO implements (neuerEintrag, getEintrag, loescheEintrag, getEintraege)
-	public function neuerEintrag($ueberschrift, $email, $text);
-	public function getEintrag($id);
-	public function loescheEintrag($id);
-	public function getEintraege();
+	    //TODO implements (neuerEintrag, getEintrag, loescheEintrag, getEintraege)
+	    public function neuerEintrag($ueberschrift, $email, $text);
+	    public function getEintrag($id);
+	    public function loescheEintrag($id);
+	    public function getEintraege();
     }
 ?>
