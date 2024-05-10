@@ -21,7 +21,7 @@ class UserFix implements User
         $this->users[2] = new User(2, "Team 3", "email3@test.de", "passwort3");
     }
 
-    public function neuerUser($ueberschrift, $email, $text)
+    public function neuerUser($team, $email, $text)
     {
         // nur dummy
         // throw new InternerFehlerException(); // zum Testen
@@ -39,6 +39,24 @@ class UserFix implements User
         // nur dummy
         // throw new FehlenderEintragException(); // zum Testen
         // throw new InternerFehlerException(); // zum Testen
+    }
+
+    public function getUserByEmailAndPassword($teamname, $password) {
+        // Durchsuche die Benutzerliste nach einem Benutzer mit der angegebenen teamname
+        foreach ($this->users as $user) {
+            if ($user->getTeamname() === $teamname) {
+                // Wenn die teamname übereinstimmt, überprüfe das Passwort
+                if ($user->getKennwort() === $password) {
+                    // Wenn das Passwort übereinstimmt, gib den Benutzer zurück
+                    return $user;
+                } else {
+                    // Wenn das Passwort nicht übereinstimmt, gib null zurück (falsches Passwort)
+                    return null;
+                }
+            }
+        }
+        // Wenn der Benutzer nicht gefunden wird, gib ebenfalls null zurück (Benutzer nicht gefunden)
+        return null;
     }
 }
 ?>

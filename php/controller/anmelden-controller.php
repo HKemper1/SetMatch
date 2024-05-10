@@ -17,4 +17,5 @@ if (empty($_POST["email"]) || empty($_POST["kennwort"])) {
     header("Location: ../../anmeldung.php");
     exit;
 }
+
 ?>
