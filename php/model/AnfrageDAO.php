@@ -8,10 +8,10 @@
 
     interface AnfrageDAO
     {
-	//TODO implements (neuerEintrag, getEintrag, loescheEintrag, getEintraege)
-	public function neuerEintrag($ueberschrift, $email, $text);
-	public function getEintrag($id);
-	public function loescheEintrag($id);
-	public function getEintraege();
+	//TODO implements (neueAnfrage, getAnfrage, loescheAnfrage, getAnfrage)
+	public function neueAnfrage();
+	public function getAnfragen();
+	public function loescheAnfrage();
+	public function getAnfrage();
     }
 ?>
