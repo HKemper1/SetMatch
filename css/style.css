@@ -107,6 +107,41 @@ ul {
     margin-right: 10px;
 }
 
+.team-box {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.team {
+    width: calc(33.33% - 20px); /* Adjust width as needed */
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+.pagination {
+    display: inline-block;
+    text-align: center;
+    margin: 20px auto;
+}
+
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+.pagination a.active {
+    background-color: #a8ab87;
+    color: rgb(1, 0, 0);
+    border-radius: 5px;
+}
+
+.pagination a:hover:not(.active) {
+    background-color: #ddd;
+    border-radius: 5px;
+}
 @media (max-width: 768px) {
     .header .container {
         flex-direction: column;
@@ -214,28 +249,6 @@ input[type=text], select, textarea {
         margin-top: 0;
     }
 }
-.pagination {
-    display: inline-block;
-}
-
-.pagination a {
-    color: black;
-    float: left;
-    padding: 8px 16px;
-    text-decoration: none;
-}
-
-.pagination a.active {
-    background-color: #a8ab87;
-    color: rgb(1, 0, 0);
-    border-radius: 5px;
-}
-
-.pagination a:hover:not(.active) {
-    background-color: #ddd;
-    border-radius: 5px;
-}
-
 .nav a {
     float: left;
     background-color: #616467;
