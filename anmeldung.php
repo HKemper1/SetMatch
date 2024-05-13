@@ -1,11 +1,7 @@
 <?php include_once "php/head.php" ?>
 
-//TODO erstmal nur die Variablen 
-$teamname;
-$passwort;
-
 <?php
-require_once $abs_path . "/php/include/head.php";
+    require_once $abs_path . "/php/include/head.php";
 ?>
 <body>
 <main>
@@ -35,7 +31,7 @@ require_once $abs_path . "/php/include/head.php";
     </section>
     </div>
 </main>
-<?php include_once "php/footer.php" ?>
+    <?php include_once "php/footer.php" ?>
 </body>
 
 </html>
