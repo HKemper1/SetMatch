@@ -9,7 +9,7 @@
 
 <body>
     <?php
-        require_once $abs_path . "/php/include/nav.php";
+        require_once $abs_path . "/php/include/header.php";
     ?>
     <br>
     <br>

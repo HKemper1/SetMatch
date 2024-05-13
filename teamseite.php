@@ -4,11 +4,11 @@ if (!isset($abs_path)) {
 }
 ?>
 <?php
-require_once $abs_path . "/php/include/head.php";
+        require_once $abs_path . "/php/include/head.php";
 ?>
 <body>
 <?php
-require_once $abs_path . "/php/include/nav.php";
+        require_once $abs_path . "/php/include/header.php";
 ?>
 
 <main>
