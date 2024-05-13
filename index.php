@@ -100,7 +100,7 @@ require_once $abs_path . "/php/include/head.php";
             <a href="#">&raquo;</a>
         </div>
 
-        <div>
+        <div class="beitrag">
             <h2>Neuer Beitrag</h2>
             <label for="text"></label><textarea id="text" name="text" cols="100" rows="10"
                                                 maxlength="1000"></textarea>

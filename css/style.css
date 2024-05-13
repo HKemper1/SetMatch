@@ -278,7 +278,19 @@ input[type=text], select, textarea {
     }
 }
 
-/* CSS-Regel das sich die Textarea nicht groeßer oder kleiner ziehen laest */
-textarea {
+/* CSS-Regel fuer den Button und das Textfeld */
+.beitrag {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.beitrag textarea {
     resize: none;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+input[type="submit"] {
+    align-self: flex-start; /* Button an den Anfang der Achse setzen */
 }
