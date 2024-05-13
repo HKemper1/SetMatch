@@ -99,7 +99,6 @@ require_once $abs_path . "/php/include/head.php";
             <a href="#">3</a>
             <a href="#">&raquo;</a>
         </div>
-        <
 
         <div>
             <h2>Neuer Beitrag</h2>

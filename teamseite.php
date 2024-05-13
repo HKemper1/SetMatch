@@ -39,8 +39,7 @@ if (!isset($abs_path)) {
 
     <section class="box">
 
-        <img src="images/Mannschaft.PNG" alt="Mannschaftsbild"
-             width="150" height="100">
+    <img src="images/teamseite/teambild.png" alt="Mannschaftsbild">
         <br>
         <div>
             <label>
@@ -58,38 +57,57 @@ if (!isset($abs_path)) {
         <div>
             <label>
                 Starspieler <br>
-                <img src="images/Mensch.PNG" alt="Starspieler"
-                     width="40" height="40">
-
+                <img src="images/teamseite/starspieler.png"
+                     srcset="logo-160x160 2x"
+                     alt="Starspieler"
+                     width="64"
+		             height="64">
             </label>
         </div>
     </section>
     <section class="box">
-        <div>
-            <img src="images/Stern.PNG" alt="Stern"
-                 width="200" height="40">
-            <Label>
-                Angriff
-            </Label>
-            <br>
-            <img src="images/Stern.PNG" alt="Stern"
-                 width="200" height="40">
-            <Label>
-                Verteidigung
-            </Label>
-            <br>
-            <img src="images/Stern.PNG" alt="Stern"
-                 width="200" height="40">
-            <Label>
-                Orga
-            </Label>
-            <br>
-            <img src="images/Stern.PNG" alt="Stern"
-                 width="200" height="40">
-            <Label>
-                Zuverlässigkeit
-            </Label>
-            <br>
+        <div class="rating">
+            <div class="stars">
+                <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
+                <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
+                <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
+                <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
+                <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
+            </div>
+        <label>Angriff</label>
+        </div>   
+             <div class="rating">
+                <div class="stars">
+                    <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
+                    <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
+                    <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
+                    <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
+                    <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
+                </div>
+            <label>Verteidigung</label>
+        </div>
+                
+        <div class="rating">
+            <div class="stars">
+                <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
+                <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
+                <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
+                <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
+                <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
+            </div>
+                <label>Organisation</label>
+            </div>
+            
+            <div class="rating">
+                <div class="stars">
+                    <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
+                    <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
+                    <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
+                    <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
+                    <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
+                </div>
+                <label>Zuverlässigkeit</label>
+            </div>
         </div>
     </section>
 
@@ -100,15 +118,15 @@ if (!isset($abs_path)) {
                 Spielfeld
             </label>
             <br>
-            <img src="images/Mensch.PNG" alt="Außen" width="40" height="40">
-            <img src="images/Mensch.PNG" alt="Mitte" width="40" height="40">
-            <img src="images/Mensch.PNG" alt="Zuspieler" width="40" height="40">
+            <img src="images/teamseite/spieler.png" alt="Außen" width="40" height="40">
+            <img src="images/teamseite/spieler.png" alt="Mitte" width="40" height="40">
+            <img src="images/teamseite/spieler.png" alt="Zuspieler" width="40" height="40">
             <br>
-            <img src="images/Mensch.PNG" alt="Außen" width="40" height="40">
-            <img src="images/Mensch.PNG" alt="Libero" width="40" height="40">
-            <img src="images/Mensch.PNG" alt="Diagonal" width="40" height="40">
+            <img src="images/teamseite/spieler.png" alt="Außen" width="40" height="40">
+            <img src="images/teamseite/spieler.png" alt="Libero" width="40" height="40">
+            <img src="images/teamseite/spieler.png" alt="Diagonal" width="40" height="40">
             <br>
-            <img src="images/Mensch.PNG" alt="Trainer" width="40" height="40">
+            <img src="images/teamseite/spieler.png" alt="Trainer" width="40" height="40">
         </div>
     </section>
 
