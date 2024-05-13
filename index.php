@@ -102,7 +102,6 @@ require_once $abs_path . "/php/include/head.php";
 
         <div>
             <h2>Neuer Beitrag</h2>
-            <h4>Beschreibung:</h4>
             <label for="text"></label><textarea id="text" name="text" cols="100" rows="10"
                                                 maxlength="1000"></textarea>
             <input type="submit" class="button" id="beitrag" name="beitrag" value="Veröffentlichen">
