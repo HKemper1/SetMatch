@@ -290,3 +290,8 @@ input[type=text], select, textarea {
         text-align: left;
     }
 }
+
+/* CSS-Regel das sich die Textarea nicht groeßer oder kleiner ziehen laest */
+textarea {
+    resize: none;
+}
