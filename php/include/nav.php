@@ -5,6 +5,4 @@
     <a href="registrierung.php"> Regestrierung</a>
     <a> <img src="Post.PNG" alt="Post"
              width="40" height="30"></a>
-    <a> <img src="Mensch.PNG" alt="Profil"
-             width="40" height="40"></a>
 </nav>
