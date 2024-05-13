@@ -12,6 +12,7 @@ require_once $abs_path . "/php/include/nav.php";
 ?>
 <br>
 <br>
+<br>
 <main>
     <div class="container">
         <h1>Registrierung</h1>
