@@ -107,10 +107,13 @@ require_once $abs_path . "/php/include/head.php";
                                                 maxlength="1000"></textarea>
 
             <input type="submit" class="button" id="beitrag" name="beitrag" value="Veröffentlichen">
+            <form action="post_message.php" method="POST">
+                <label for="message">Neue Nachricht:</label><br>
+                <textarea id="message" name="message" cols="50" rows="3"></textarea><br>
+                <input type="submit" value="Nachricht posten">
+            </form>
         </div>
     </section>
-
-
 </main>
 
 <?php
