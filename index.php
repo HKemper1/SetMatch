@@ -146,26 +146,12 @@ require_once $abs_path . "/php/include/head.php";
     </div>
 </section>
 
-<section class="new-post-section">
-    <h2>Neuer Beitrag</h2>
-    <h4>Beschreibung:</h4>
-    <label for="text"></label><textarea id="text" name="text" cols="100" rows="10" maxlength="1000"></textarea>
-
-    <input type="submit" class="button" id="beitrag" name="beitrag" value="Veröffentlichen">
-    <form action="post_message.php" method="POST">
-        <label for="message">Neue Nachricht:</label><br>
-        <textarea id="message" name="message" cols="50" rows="3"></textarea><br>
-        <input type="submit" value="Nachricht posten">
-    </form>
-</section>
-
-        <div class="beitrag">
-            <h2>Neuer Beitrag</h2>
-            <label for="text"></label><textarea id="text" name="text" cols="100" rows="10"
+    <div class="beitrag">
+        <h2>Neuer Beitrag</h2>
+        <label for="text"></label><textarea id="text" name="text" cols="100" rows="10"
                                                 maxlength="1000"></textarea>
-            <input type="submit" class="button" id="beitrag" name="beitrag" value="Veröffentlichen">
-        </div>
-    </section>
+        <input type="submit" class="button" id="beitrag" name="beitrag" value="Veröffentlichen">
+    </div>
 </main>
 
 <?php
