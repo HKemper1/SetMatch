@@ -296,12 +296,12 @@ input[type=text], select, textarea {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    margin: 10px;
 }
 
 .beitrag textarea {
     resize: none;
     width: 100%;
-    margin-bottom: 10px;
 }
 
 input[type="submit"] {
