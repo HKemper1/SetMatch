@@ -12,6 +12,7 @@
         require_once $abs_path . "/php/include/nav.php";
     ?>
     <br>
+    <br>
     <main>
         <div class="box">
 
