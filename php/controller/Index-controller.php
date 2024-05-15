@@ -17,7 +17,7 @@ try {
 
     // Kontaktierung des Models (Geschaeftslogik)
     $forum = Forum::getInstance();
-    $eintraege = $forum->getBeitraege();
+    $beitraege = $forum->getBeitraege();
 
 } catch (InternerFehlerException $exc) {
     // Behandlung von potentiellen Fehlern der Geschaeftslogik
