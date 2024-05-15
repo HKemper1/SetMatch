@@ -8,8 +8,8 @@ require_once $abs_path . "/php/include/head.php";
 ?>
 <body>
 <?php
-        require_once $abs_path . "/php/include/header.php";
-    ?>
+require_once $abs_path . "/php/include/header.php";
+?>
 <br>
 <br>
 <br>
