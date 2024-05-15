@@ -307,3 +307,28 @@ input[type=text], select, textarea {
 input[type="submit"] {
     align-self: flex-start; /* Button an den Anfang der Achse setzen */
 }
+
+/* CSS-Regel iFrame 
+    http://maddesigns.de/responsive-iframes-2417.html
+    Copy-Paste Internet
+*/
+.iframe_tabelle {
+    position: relative; 
+    padding-bottom: 56.25%; /* ratio 16x9 */
+    height: 0; 
+    overflow: hidden; 
+    width: 100%;
+    height: auto;
+    margin: 10px;
+  }
+  .iframe_tabelle iframe {
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+  }
+  /* ratio 4x3 */
+  .iframe_tabelle.ratio4x3 {
+    padding-bottom: 75%;
+  }

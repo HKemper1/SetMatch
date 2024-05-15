@@ -11,9 +11,9 @@ require_once $abs_path . "/php/include/head.php";
         require_once $abs_path . "/php/include/header.php";
 ?>
 <main>
-    <section class="box">
+    <section class="iframe_tabelle">
         <iframe src="https://www.nwvv.de/cms/home/spielbetrieb/m_ligen/vl.xhtml?LeaguePresenter.view=resultTable&LeaguePresenter.matchSeriesId=36634909#samsCmsComponent_436163"
-                width="100%" height="450" style="border:0;" allowfullscreen=""></iframe>
+                width="25%" height="25%" allowfullscreen=""></iframe>
         <br>
     </section>
 
