@@ -18,7 +18,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if (!isset($users[$teamname])) {
             if ($password === $password_repeat) {
-                // Hier können Sie weitere Validierungen für die E-Mail-Adresse hinzufügen
                 $users[$teamname] = $password;
                 $_SESSION['teamname'] = $teamname;
                 header("Location: index.php");
