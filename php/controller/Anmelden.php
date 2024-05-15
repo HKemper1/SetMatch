@@ -17,6 +17,7 @@ $users = array(
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])) {
     $teamname = $_POST['teamname'];
     $password = $_POST['password'];
+    $Anmelde_Error = $_POST['Anmelde_Error'];
 
     if (isset($users[$teamname])) {
         if ($users[$teamname] == $password) {
@@ -33,5 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])) {
     exit;
 }
 ?>
+
+
 
 
