@@ -1,0 +1,19 @@
+.whiteText{
+    color: white;
+}
+
+.blackText{
+    color: black;
+}
+
+.kleinerText{
+    font-size: 16px;
+}
+
+.normalerText{
+    font-size: 18px;
+}
+
+.großerText{
+    font-size: 21px;
+}

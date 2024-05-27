@@ -1,0 +1,61 @@
+
+.header {
+    background-color: #3e6791;
+    color: white; 
+    min-height: 400px;
+}
+
+.header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.nav {
+    display: flex;
+    width: 100%;
+}
+
+.nav a {
+    flex: 1; /* Verteile den verfügbaren Platz gleichmäßig auf die Links */
+    background-color: #616467;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: white; /* Textfarbe zu weiß setzen */
+}
+
+.nav a:hover {
+    background-color: #575a5d; /* Ändere die Hintergrundfarbe bei Hover */
+}
+/*
+.header img {
+    max-width: 400px;
+}
+
+.header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav a {
+    float: left;
+    background-color: #616467;
+    display: block;
+    color: #000000; 
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.nav a:hover {
+    background-color: #ffffff; 
+    color: black; 
+}
+
+.nav .icon {
+    display: none;
+}*/
