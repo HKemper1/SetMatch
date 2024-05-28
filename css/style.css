@@ -222,7 +222,21 @@ input[type=text], select, textarea {
     }
 }*/
 
+/* IndividualStyles (Header, Footer) */
 @import url(individualStyles/headerStyle.css);
 @import url(individualStyles/footerStyle.css);
-@import url(individualStyles/indexStyle.css);
+
+/* basicStyles (basics, button, text) */
 @import url(basicStyle/text.css);
+@import url(basicStyle/button.css);
+@import url(basicStyle/basics.css);
+
+/* IndividualStyles (Unterseite) */
+@import url(individualStyles/anmeldungStyle.css);
+@import url(individualStyles/datenschutzStyle.css);
+@import url(individualStyles/impressumStyle.css);
+@import url(individualStyles/indexStyle.css);
+@import url(individualStyles/nutzerbedingungenStyle.css);
+@import url(individualStyles/registrierungStyle.css);
+@import url(individualStyles/teamseiteStyle.css);
+@import url(individualStyles/indexStyle.css);
