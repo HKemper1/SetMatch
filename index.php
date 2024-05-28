@@ -62,7 +62,7 @@ require_once $abs_path . "/php/include/head.php";
 
         <div>
             <h2>Team Beta</h2>
-            <p>
+            <p class="normalerText">
                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
                 labore et
                 dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
