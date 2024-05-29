@@ -47,7 +47,7 @@ require_once $abs_path . "/php/include/head.php";
             </div>
 
             <div>
-                <a href="anmeldung.php" class="button">Anmeldung</a>
+                <a href="anmeldung.php">Anmeldung</a>
                 <button class="button" type="submit">Registrieren</button>
             </div>
         </form>

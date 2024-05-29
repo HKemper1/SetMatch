@@ -32,7 +32,7 @@
                     </div>
                 </div>
                 <div>
-                    <a href="registrierung.php" class="button">Registrieren</a>
+                    <a href="registrierung.php">Registrieren</a>
                     <button class="button" type="submit">Anmelden </button>
                 </div>
             </form>
