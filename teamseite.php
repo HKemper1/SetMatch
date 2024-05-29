@@ -72,14 +72,17 @@ if (!isset($abs_path)) {
                     <label>Zuverlässigkeit</label>
                 </div>
             </section>
-            <section class="anfrageContainer">
+        </div>
+    </div>
+    <div class="teamInfo">
+    <section class="anfrageContainer">
                 <label>
                     <h2>Du möchtest gegen uns Spielen</h2>
                     <input type="submit" class="button" id="anfrage" name="anfrage" value="Anfrage stellen">
                 </label>
             </section>
-        </div>
     </div>
+    
 </main>
 <?php
 include_once $abs_path . "/php/include/footer.php";
