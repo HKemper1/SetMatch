@@ -25,7 +25,7 @@ require_once $abs_path . "/db/db.php";
 
                     if ($user && password_verify($password, $user['password'])) {
                         $_SESSION['teamname'] = $teamname;
-                        header("Location: willkommen.php");
+                        header("Location: index.php");
                         exit();
                     } else {
                         echo "Teamname oder Passwort falsch!";
