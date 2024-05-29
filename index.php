@@ -20,11 +20,6 @@ require_once $abs_path . "/php/include/head.php";
 ?>
 <main>
     <section class="box">
-        <iframe src="https://www.nwvv.de/cms/home/spielbetrieb/m_ligen/vl.xhtml?LeaguePresenter.view=resultTable&LeaguePresenter.matchSeriesId=36634909#samsCmsComponent_436163"
-                width="100%" height="450" style="border:0;" allowfullscreen=""></iframe>
-        <br>
-    </section>
-    <section class="box">
             <?php if (isset($_SESSION["message"]) && $_SESSION["message"] == "invalid_entry_id"): ?>
                 <p>
                     Der angegebene Gästebucheintrag kann leider nicht gefunden werden.
@@ -83,11 +78,11 @@ require_once $abs_path . "/php/include/head.php";
 
         <form action="php/controller/eintrag-neu-controller.php" method="post">
 
-            <h3>Titel*</h3>
+            <h2>Überschrift</h2>
             <input type="text" name="ueberschrift" value="<?= htmlspecialchars($ueberschrift) ?>" required>
             <br>
-            <h3>Beschreibung*</h3>
-            <textarea cols="70" rows="10" name="text"><?= htmlspecialchars($text) ?></textarea>
+            <h2>Beitragstext</h2>
+            <textarea class="textbox" cols="70" rows="10" name="text"><?= htmlspecialchars($text) ?></textarea>
             <br>
             <input type="submit" name="submit" value="Veröffentlichen">
         </form>
