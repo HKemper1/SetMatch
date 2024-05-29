@@ -54,6 +54,16 @@ require_once $abs_path . "/db/db.php";
                     <button class="button" type="submit">Anmelden</button>
                 </div>
             </form>
+
+            <?php
+            if ($count == 0 && $_SERVER['REQUEST_METHOD'] == 'POST') {
+                // Registrierung erfolgreich, Benutzer anmelden
+                $_SESSION['teamname'] = $teamname;
+                // Weiterleitung zu Inex
+                header("Location: index.php");
+                exit();
+            }
+            ?>
         </section>
     </div>
 </main>
