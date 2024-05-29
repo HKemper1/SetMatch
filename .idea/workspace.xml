@@ -8,16 +8,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c01935fe-021b-440f-8fed-b0edc81c675a" name="Changes" comment="php">
-      <change afterPath="$PROJECT_DIR$/db/db.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logout.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/willkommen.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anmeldung.php" beforeDir="false" afterPath="$PROJECT_DIR$/anmeldung.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/include/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/include/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/registrierung.php" beforeDir="false" afterPath="$PROJECT_DIR$/registrierung.php" afterDir="false" />
-    </list>
+    <list default="true" id="c01935fe-021b-440f-8fed-b0edc81c675a" name="Changes" comment="php" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -101,7 +92,7 @@
       <workItem from="1714477428183" duration="4916000" />
       <workItem from="1715182314201" duration="1987000" />
       <workItem from="1715587467637" duration="21064000" />
-      <workItem from="1716995027369" duration="2615000" />
+      <workItem from="1716995027369" duration="2915000" />
     </task>
     <task id="LOCAL-00001" summary="add files">
       <created>1713271058005</created>
@@ -215,7 +206,14 @@
       <option name="project" value="LOCAL" />
       <updated>1716995079957</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="php">
+      <created>1716997841536</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1716997841537</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -232,7 +230,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/clear_code" />
+                        <option value="origin/clear_code_login" />
                       </list>
                     </value>
                   </entry>
