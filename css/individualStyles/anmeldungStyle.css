@@ -1,0 +1,46 @@
+.anmBody h1 p ul ol form label {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.anmBody {
+    background-color: whitesmoke;
+    line-height: 2;
+}
+
+.anmContainer {
+    width: 80%;
+    margin: 70px auto;
+    padding: 50px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 25px;
+}
+
+.formContainerAnm {
+    display: flex;
+    flex-direction: column;
+}
+
+.formContainerAnm div {
+    margin-bottom: 15px;
+}
+
+
+.regLink {
+    color: cornflowerblue;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+.regLink:hover{
+    text-decoration: underline;
+}
+
+.labelAnm {
+    margin-bottom: 5px;
+    display: block;
+    font-weight: bold;
+    color: Black;
+}

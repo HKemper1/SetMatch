@@ -10,36 +10,33 @@ require_once $abs_path . "/php/include/head.php";
 <?php
         require_once $abs_path . "/php/include/header.php";
     ?>
-<br>
-<br>
-<br>
 <main>
-    <div class="container">
+    <div class="regcontainer regBody">
         <h1>Registrierung</h1>
 
         <form>
-            <div>
-                <label for="teamname">Teamname</label>
+            <div class="formContainerReg">
+                <label class="labelReg" for="teamname">Teamname</label>
                 <div>
                     <input type="text" id="teamname" name="teamname" maxlength="100" required>
                 </div>
             </div>
-            <div>
-                <label for="email">E-Mail</label>
+            <div class="formContainerReg">
+                <label class="labelReg" for="email">E-Mail</label>
                 <div>
                     <input type="email" id="email" name="email" maxlength="100" required>
                 </div>
             </div>
 
-            <div>
-                <label for="password">Kennwort</label>
+            <div class="formContainerReg">
+                <label class="labelReg" for="password">Kennwort</label>
                 <div>
                     <input type="password" id="password" name="password" minlength="8" maxlength="100" required>
                 </div>
             </div>
 
-            <div>
-                <label for="password_repeat">Kennwort wiederholen:</label>
+            <div class="formContainerReg">
+                <label class="labelReg" for="password_repeat">Kennwort wiederholen:</label>
                 <div>
                     <input type="password" id="password_repeat" name="password_repeat" minlength="8" maxlength="100"
                            required>
@@ -47,7 +44,7 @@ require_once $abs_path . "/php/include/head.php";
             </div>
 
             <div>
-                <a href="anmeldung.php">Anmeldung</a>
+                <a class="anmeldeLink " href="anmeldung.php">Anmeldung</a>
                 <button class="button" type="submit">Registrieren</button>
             </div>
         </form>
