@@ -14,7 +14,7 @@ if (!isset($_POST["ueberschrift"]) || !isset($_POST["text"]) || !isset($_POST["s
     exit;
 }
 
-if (!empty($_POST["ueberschrift"]) {
+if (!empty($_POST["ueberschrift"])) {
     try {
         // Aufbereitung der Daten fuer die Kontaktierung des Models
         // Hinweis: hier nichts zu tun
