@@ -50,25 +50,25 @@ require_once $abs_path . "/db/db.php";
             <div class="formContainerReg">
                 <label class="labelReg" for="teamname">Teamname</label>
                 <div>
-                    <input type="text" id="teamname" name="teamname" maxlength="100" required>
+                    <input class="inputReg" type="text" id="teamname" name="teamname" maxlength="100" required>
                 </div>
             </div>
             <div class="formContainerReg">
                 <label class="labelReg" for="email">E-Mail</label>
                 <div>
-                    <input type="email" id="email" name="email" maxlength="100" required>
+                    <input class="inputReg" type="email" id="email" name="email" maxlength="100" required>
                 </div>
             </div>
             <div class="formContainerReg">
-                <label class="labelReg" for="password">Kennwort</label>
+                <label  class="labelReg" for="password">Kennwort</label>
                 <div>
-                    <input type="password" id="password" name="password" minlength="8" maxlength="100" required>
+                    <input class="inputReg" type="password" id="password" name="password" minlength="8" maxlength="100" required>
                 </div>
             </div>
             <div class="formContainerReg">
                 <label class="labelReg" for="password_repeat">Kennwort wiederholen:</label>
                 <div>
-                    <input type="password" id="password_repeat" name="password_repeat" minlength="8" maxlength="100" required>
+                    <input class="inputReg" type="password" id="password_repeat" name="password_repeat" minlength="8" maxlength="100" required>
                 </div>
             </div>
             <div>

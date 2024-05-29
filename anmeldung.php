@@ -40,13 +40,13 @@ require_once $abs_path . "/db/db.php";
                 <div>
                     <label class="labelAnm" for="teamname">Teamname</label>
                     <div>
-                        <input type="text" id="teamname" name="teamname" maxlength="100" required>
+                        <input class="inputReg" type="text" id="teamname" name="teamname" maxlength="100" required>
                     </div>
                 </div>
                 <div>
                     <label class="labelAnm" for="password">Passwort:</label>
                     <div>
-                        <input type="password" id="password" name="password" maxlength="100" required>
+                        <input class="inputReg" type="password" id="password" name="password" maxlength="100" required>
                     </div>
                 </div>
                 <div>

@@ -1,0 +1,20 @@
+.inputChat {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid black;
+    border-radius: 4px;
+}
+
+.inputChat:focus {
+    border-color: black;
+}
+
+.chatContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%; 
+    max-width: 800px; 
+    margin: 0 auto; 
+    padding: 20px;
+    box-sizing: border-box; 
+}

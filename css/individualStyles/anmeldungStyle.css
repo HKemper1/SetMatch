@@ -44,3 +44,15 @@
     font-weight: bold;
     color: Black;
 }
+
+.inputAnm[type] {
+    width: 95%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid black;
+    border-radius: 4px;
+}
+
+.inputAnm[type]:focus {
+    border-color: black;
+}

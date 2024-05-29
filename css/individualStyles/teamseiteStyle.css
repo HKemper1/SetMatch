@@ -18,20 +18,50 @@
 
 .teamInfo {
     margin: 10px;
+    padding: 10px;
     background-color: white;
     border-radius: 25px;
     border: 2px solid black;
     display: flex;
     flex-direction:column;
-    align-items: center;
     flex-wrap: wrap; 
 }
 
-.teamInfo label {
-    padding: 15px;
+.unsereStaerken {
+    display: flex;
+    flex-direction: column; /* Elemente vertikal anordnen */
+    align-items:center; /* Elemente horizontal zentrieren */
 }
 
-.unsereStaerken {
-    margin: 50px;
-    padding: 25px;
+.unsereStaerken img {
+    padding-left: 50px;
+    padding-top: 50px;
 }
+
+.unsereStaerken label {
+    padding-top: 10px;
+    padding-left: 50px;
+}
+
+.star {
+    padding-top: 10px;
+    padding-left: 50px;
+}
+
+.star img{
+    padding-top: 5px;
+    padding-left: 5px;
+}
+
+.anfrageContainer {
+    display: flex;
+    flex-direction: column; /* Elemente vertikal anordnen */
+    align-items:center; /* Elemente horizontal zentrieren */
+}
+
+.anfrageContainer input {
+    margin-left: 100px;
+    margin-bottom: 25px;
+}
+
+

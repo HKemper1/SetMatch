@@ -26,11 +26,6 @@ require_once $abs_path . "/php/include/head.php";
             <h1>Willkommen!</h1>
             <p>Sie sind nicht angemeldet.</p>
         <?php endif; ?>
-        <div class="anmContainer anmBody">
-        <iframe src="https://www.nwvv.de/cms/home/spielbetrieb/m_ligen/vl.xhtml?LeaguePresenter.view=resultTable&LeaguePresenter.matchSeriesId=36634909#samsCmsComponent_436163"
-                width="100%" height="450" style="border:0;" allowfullscreen=""></iframe>
-        </div>
-            <br>
     </section>
     <section class="anmContainer anmBody">
             <?php if (isset($_SESSION["message"]) && $_SESSION["message"] == "invalid_entry_id"): ?>
@@ -87,17 +82,17 @@ require_once $abs_path . "/php/include/head.php";
         unset($_SESSION["message"]);
         ?>
 
-        <h1>Neue Anfrage</h1>
+        <h1>Neuer Beitrag</h1>
 
-        <form action="php/controller/eintrag-neu-controller.php" method="post">
+        <form class="chatContainer" action="php/controller/eintrag-neu-controller.php" method="post">
 
-            <h3>Titel*</h3>
-            <input type="text" name="ueberschrift" value="<?= htmlspecialchars($ueberschrift) ?>" required>
+            <h2>Überschrift</h2>
+            <input class="inputChat" type="text" name="ueberschrift" value="<?= htmlspecialchars($ueberschrift) ?>" required>
             <br>
-            <h3>Beschreibung*</h3>
-            <textarea cols="70" rows="10" name="text"><?= htmlspecialchars($text) ?></textarea>
+            <h2>Text</h2>
+            <textarea class="textbox" cols="70" rows="10" name="text"><?= htmlspecialchars($text) ?></textarea>
             <br>
-            <input type="submit" name="submit" value="Veröffentlichen">
+            <input class="button" type="submit" name="submit" value="Beitrag erstellen">
         </form>
 
 
