@@ -11,14 +11,12 @@
     <?php
         require_once $abs_path . "/php/include/header.php";
     ?>
-    <br>
-    <br>
     <main>
         <div class="box">
 
         <h1>Nutzerbedingungen</h1>
 
-        <p>
+        <p class="normalerText">
             Lorem ipsum dolor sit amet, consetetur sadipscing
             elitr, sed diam nonumy eirmod tempor invidunt ut labore
             et dolore magna aliquyam erat, sed diam voluptua. At vero

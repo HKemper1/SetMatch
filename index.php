@@ -11,13 +11,13 @@ require_once $abs_path . "/php/include/head.php";
         require_once $abs_path . "/php/include/header.php";
 ?>
 <main>
-    <section class="box">
+    <section>
         <iframe src="https://www.nwvv.de/cms/home/spielbetrieb/m_ligen/vl.xhtml?LeaguePresenter.view=resultTable&LeaguePresenter.matchSeriesId=36634909#samsCmsComponent_436163"
                 width="100%" height="450" style="border:0;" allowfullscreen=""></iframe>
         <br>
     </section>
 
-    <section class="box">
+    <section>
         <label>
             Hier werden die Testspielanfragen dargestellt.
             <br>
@@ -36,7 +36,7 @@ require_once $abs_path . "/php/include/head.php";
         </label>
     </section>
 
-    <section class="box">
+    <section>
         <div>
             <h1>Öffentliche Beiträge</h1>
         </div>
@@ -92,7 +92,7 @@ require_once $abs_path . "/php/include/head.php";
                 sea takimata sanctus est Lorem ipsum dolor sit amet.
             </p>
         </div>
-        <div class="pagination">
+        <div>
             <a href="#">&laquo;</a>
             <a href="#" class="active">1</a>
             <a href="#">2</a>
@@ -105,7 +105,6 @@ require_once $abs_path . "/php/include/head.php";
             <h4>Beschreibung:</h4>
             <label for="text"></label><textarea class="textbox" id="text" name="text" cols="100" rows="10"
                                                 maxlength="1000"></textarea>
-
             <input type="submit" class="button" id="beitrag" name="beitrag" value="Veröffentlichen">
         </div>
     </section>
