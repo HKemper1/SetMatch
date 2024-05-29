@@ -12,15 +12,8 @@ require_once $abs_path . "/php/include/head.php";
 ?>
 <main>
     <section>
-        <iframe src="https://www.nwvv.de/cms/home/spielbetrieb/m_ligen/vl.xhtml?LeaguePresenter.view=resultTable&LeaguePresenter.matchSeriesId=36634909#samsCmsComponent_436163"
-                width="100%" height="450" style="border:0;" allowfullscreen=""></iframe>
-        <br>
-    </section>
-
-    <section>
         <label>
             Hier werden die Testspielanfragen dargestellt.
-            <br>
             <label>
                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
                 nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
@@ -31,7 +24,6 @@ require_once $abs_path . "/php/include/head.php";
                 sed diam voluptua. At vero eos et accusam et justo duo dolores
                 et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
             </label>
-            <br>
             <input type="submit" class="button" id="anfrage" name="anfrage" value="Anfrage stellen">
         </label>
     </section>

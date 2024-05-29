@@ -1,0 +1,37 @@
+.rund {
+	border-radius: 200px;
+	-moz-border-radius: 200px;
+	-webkit-border-radius: 200px;
+    transform: scale(0.2);
+}
+
+.img-container {
+    width: 300px; 
+    height: 300px; 
+    border-radius: 50%; 
+    overflow: hidden; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.teamInfo {
+    margin: 10px;
+    background-color: white;
+    border-radius: 25px;
+    border: 2px solid black;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    flex-wrap: wrap; 
+}
+
+.teamInfo label {
+    padding: 15px;
+}
+
+.unsereStaerken {
+    margin: 50px;
+    padding: 25px;
+}

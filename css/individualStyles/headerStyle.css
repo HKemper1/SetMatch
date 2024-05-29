@@ -17,15 +17,15 @@
 }
 
 .nav a {
-    flex: 1; /* Verteile den verfügbaren Platz gleichmäßig auf die Links */
+    flex: 1; 
     background-color: #616467;
     text-align: center;
     padding: 30px 16px;
     text-decoration: none;
-    color: white; /* Textfarbe zu weiß setzen */
+    color: white; 
 }
 
 .nav a:hover {
-    background-color: #575a5d; /* Ändere die Hintergrundfarbe bei Hover */
+    background-color: #575a5d; 
 }
 
