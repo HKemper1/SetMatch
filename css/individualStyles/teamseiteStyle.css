@@ -35,3 +35,25 @@
     margin: 10px;
 }
 
+.stars {
+    display: flex;
+    align-items: column;
+}
+
+.stars div {
+    margin-bottom: 5px;
+}
+
+.stars label {
+    padding-top: 5px;
+}
+
+.stars img {
+    margin-right: 5px;
+}
+
+#teamStats {
+    display: block;
+    flex-direction: row;
+    justify-content: space-between;
+}

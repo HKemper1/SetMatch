@@ -21,53 +21,53 @@ if (!isset($abs_path)) {
         Unser Volleyballteam ist eine engagierte und dynamische Gruppe von Sportlerinnen und Sportlern, die durch ihre Leidenschaft für das Spiel und ihren Teamgeist hervorsticht. Wir trainieren regelmäßig, um unsere Fähigkeiten zu verbessern und auf dem Spielfeld unser Bestes zu geben. Unser Team zeichnet sich durch eine starke Gemeinschaft und gegenseitige Unterstützung aus, sowohl im Training als auch bei Wettkämpfen. Jedes Mitglied bringt seine individuellen Stärken ein, was uns als Einheit noch stärker macht. Mit unserem unermüdlichen Einsatz und unserer positiven Einstellung streben wir danach, jede Herausforderung zu meistern und gemeinsam Erfolge zu feiern.
         </label>
     </div>
-        
-    </section>
-    <div class="unsereStaerken">
-        <div>
-            <label>
-                <p class="kleinerText">Starspieler</p>
-                <img src="images/teamseite/starspieler.png"
+
+    <div class="teamStats">
+        <div class="unsereStaerken">
+            <div>
+                <label>
+                    <p class="kleinerText">Starspieler</p>
+                    <img src="images/teamseite/starspieler.png"
                      srcset="logo-160x160 2x"
                      alt="Starspieler"
                      width="64"
 		             height="64">
-            </label>
+                </label>
 
-            <section>
-            <div>
-                <div>
-                    <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
-                    <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
-                    <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
-                    <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
-                    <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
+                <section>
+                <div class="stars">
+                    <div>
+                        <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
+                        <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
+                        <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
+                        <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
+                        <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
+                    </div>
+                    <label>Angriff</label>
+                </div>   
+                <div class="stars">
+                    <div>
+                        <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
+                        <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
+                        <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
+                        <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
+                        <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
+                    </div>
+                    <label>Verteidigung</label>
                 </div>
-                <p class="kleinerText">Angriff</p>
-            </div>   
-            <div>
-                <div>
-                    <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
-                    <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
-                    <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
-                    <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
-                    <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
-                </div>
-                <label>Verteidigung</label>
-            </div>
                 
-            <div>
-                <div>
-                    <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
-                    <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
-                    <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
-                    <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
-                    <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
-                </div>
+                <div class="stars">
+                    <div>
+                        <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
+                        <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
+                        <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
+                        <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
+                        <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
+                    </div>
                     <label>Organisation</label>
                 </div>
             
-                <div>
+                <div class="stars">
                     <div>
                         <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
                         <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
@@ -78,23 +78,16 @@ if (!isset($abs_path)) {
                     <label>Zuverlässigkeit</label>
                 </div>
             </div>
-            </section>
             <section>
-            <label>
-                <h2>Du möchtest gegen uns Spielen</h2>
-                <input type="submit" class="button" id="anfrage" name="anfrage" value="Anfrage stellen">
-            </label>
-        </section>
+                <label>
+                    <h2>Du möchtest gegen uns Spielen</h2>
+                    <input type="submit" class="button" id="anfrage" name="anfrage" value="Anfrage stellen">
+                </label>
+            </section>
         </div>
-    </div>
-    
-
-    <section>
-
-        <div>
-            <label>
-                Spielfeld
-            </label>
+        <section>
+            <div>
+                <label>Spielfeld</label>
             <br>
             <img src="images/teamseite/spieler.png" alt="Außen" width="40" height="40">
             <img src="images/teamseite/spieler.png" alt="Mitte" width="40" height="40">
@@ -105,10 +98,9 @@ if (!isset($abs_path)) {
             <img src="images/teamseite/spieler.png" alt="Diagonal" width="40" height="40">
             <br>
             <img src="images/teamseite/spieler.png" alt="Trainer" width="40" height="40">
-        </div>
-    </section>
-
-    
+            </div>
+        </section>
+    </div>
 </main>
 <?php
 include_once $abs_path . "/php/include/footer.php";
