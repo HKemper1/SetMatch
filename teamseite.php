@@ -26,7 +26,7 @@ if (!isset($abs_path)) {
     <div class="unsereStaerken">
         <div>
             <label>
-                Starspieler
+                <p class="kleinerText">Starspieler</p>
                 <img src="images/teamseite/starspieler.png"
                      srcset="logo-160x160 2x"
                      alt="Starspieler"
@@ -43,7 +43,7 @@ if (!isset($abs_path)) {
                     <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
                     <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
                 </div>
-                <label>Angriff</label>
+                <p class="kleinerText">Angriff</p>
             </div>   
             <div>
                 <div>
