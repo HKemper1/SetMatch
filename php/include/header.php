@@ -10,6 +10,7 @@
         <a href="teamseite.php"> Teamseite</a>
         <a href="anmeldung.php"> Anmeldung</a>
         <a href="registrierung.php"> Regestrierung</a>
+        <a href="logout.php">Abmelden</a>
         <a> <img src="../SetMatch/images/basis_images/glocke.png" alt="Post"
                      width="16" height="16"></a>
     </nav>

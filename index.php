@@ -20,6 +20,7 @@ require_once $abs_path . "/php/include/head.php";
 ?>
 <main>
     <section class="box">
+        <h1>Willkommen, <?php echo htmlspecialchars($_SESSION['teamname']); ?>!</h1>
         <iframe src="https://www.nwvv.de/cms/home/spielbetrieb/m_ligen/vl.xhtml?LeaguePresenter.view=resultTable&LeaguePresenter.matchSeriesId=36634909#samsCmsComponent_436163"
                 width="100%" height="450" style="border:0;" allowfullscreen=""></iframe>
         <br>
