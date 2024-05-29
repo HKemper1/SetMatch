@@ -2,6 +2,14 @@
 if (!isset($abs_path)) {
     require_once "path.php";
 }
+// Aufbereitung der Daten fuer die Ausgabe (View)
+$ueberschrift = isset($_SESSION["ueberschrift"]) ? $_SESSION["ueberschrift"] : "";
+$text = isset($_SESSION["text"]) ? $_SESSION["text"] : "";
+unset($_SESSION["ueberschrift"]);
+unset($_SESSION["text"]);
+?>
+<?php
+require_once $abs_path . "/php/controller/index-controller.php";
 ?>
 <?php
 require_once $abs_path . "/php/include/head.php";
@@ -11,94 +19,80 @@ require_once $abs_path . "/php/include/head.php";
         require_once $abs_path . "/php/include/header.php";
 ?>
 <main>
-    <section>
-        <label>
-            Hier werden die Testspielanfragen dargestellt.
-            <label>
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-                nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-                sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-                Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                invidunt ut labore et dolore magna aliquyam erat,
-                sed diam voluptua. At vero eos et accusam et justo duo dolores
-                et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-            </label>
-            <input type="submit" class="button" id="anfrage" name="anfrage" value="Anfrage stellen">
-        </label>
+    <section class="box">
+        <iframe src="https://www.nwvv.de/cms/home/spielbetrieb/m_ligen/vl.xhtml?LeaguePresenter.view=resultTable&LeaguePresenter.matchSeriesId=36634909#samsCmsComponent_436163"
+                width="100%" height="450" style="border:0;" allowfullscreen=""></iframe>
+        <br>
     </section>
+    <section class="box">
+            <?php if (isset($_SESSION["message"]) && $_SESSION["message"] == "invalid_entry_id"): ?>
+                <p>
+                    Der angegebene Gästebucheintrag kann leider nicht gefunden werden.
+                </p>
+            <?php elseif (isset($_SESSION["message"]) && $_SESSION["message"] == "internal_error"): ?>
+                <p>
+                    Es ist ein interner Fehler aufgetreten.
+                    Bitte versuchen Sie es erneut oder kontaktieren Sie den Administrator.
+                </p>
+            <?php elseif (isset($_SESSION["message"]) && $_SESSION["message"] == "missing_parameters"): ?>
+                <p>
+                    Fehler beim Aufruf der Seite: Es fehlen notwendige Parameter!
+                </p>
+            <?php elseif (isset($_SESSION["message"]) && $_SESSION["message"] == "new_entry"): ?>
+                <p>
+                    Neuer Eintrag wurde hinzugefügt!
+                </p>
+            <?php elseif (isset($_SESSION["message"]) && $_SESSION["message"] == "delete_entry"): ?>
+                <p>
+                    Eintrag wurde gelöscht!
+                </p>
+            <?php endif; ?>
+            <?php
+            unset($_SESSION["message"]);
+            ?>
 
-    <section>
-        <div>
-            <h1>Öffentliche Beiträge</h1>
-        </div>
+            <h1>Spiel Anfragen</h1>
 
+            <ul>
+                <?php if (empty($eintraege)): ?>
+                    Keine Einträge vorhanden.
+                <?php else:
+                    foreach ($eintraege as $eintrag): ?>
+                        <li><a href="eintrag-anzeigen.php?id=<?= urlencode($eintrag->getId()) ?>">
+                                <?= htmlspecialchars($eintrag->getUeberschrift()) ?>
+                            </a> |
+                            <a
+                                    href="php/controller/eintrag-loeschen-controller.php?id=<?= urlencode($eintrag->getId()) ?>">löschen</a>
+                        </li>
+                    <?php endforeach; ?>
+                <?php endif; ?>
+            </ul>
+    </section>
+    <section class="box">
 
-        <div>
-
-            <h2>Team Alpha</h2>
+        <?php if (isset($_SESSION["message"]) && $_SESSION["message"] == "missing_required_parameters"): ?>
             <p>
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-                labore et
-                dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-                Stet
-                clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-                amet,
-                consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-                erat,
-                sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-                no
-                sea takimata sanctus est Lorem ipsum dolor sit amet.
+                Bitte alle erforderlichen Daten (Überschrift) eingeben!
             </p>
-        </div>
+        <?php endif; ?>
+        <?php
+        unset($_SESSION["message"]);
+        ?>
 
-        <div>
-            <h2 class="großerText">Team Beta</h2>
-            <p class="normalerText">
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-                labore et
-                dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-                Stet
-                clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-                amet,
-                consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-                erat,
-                sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-                no
-                sea takimata sanctus est Lorem ipsum dolor sit amet.
-        </div>
+        <h1>Neue Anfrage</h1>
 
-        <div>
-            <h2>Team Omega</h2>
-            <p>
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-                labore et
-                dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-                Stet
-                clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-                amet,
-                consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-                erat,
-                sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-                no
-                sea takimata sanctus est Lorem ipsum dolor sit amet.
-            </p>
-        </div>
-        <div>
-            <a href="#">&laquo;</a>
-            <a href="#" class="active">1</a>
-            <a href="#">2</a>
-            <a href="#">3</a>
-            <a href="#">&raquo;</a>
-        </div>
+        <form action="php/controller/eintrag-neu-controller.php" method="post">
 
-        <div>
-            <h2>Neuer Beitrag</h2>
-            <h4>Beschreibung:</h4>
-            <label for="text"></label><textarea class="textbox" id="text" name="text" cols="100" rows="10"
-                                                maxlength="1000"></textarea>
-            <input type="submit" class="button" id="beitrag" name="beitrag" value="Veröffentlichen">
-        </div>
+            <h3>Titel*</h3>
+            <input type="text" name="ueberschrift" value="<?= htmlspecialchars($ueberschrift) ?>" required>
+            <br>
+            <h3>Beschreibung*</h3>
+            <textarea cols="70" rows="10" name="text"><?= htmlspecialchars($text) ?></textarea>
+            <br>
+            <input type="submit" name="submit" value="Veröffentlichen">
+        </form>
+
+
     </section>
 </main>
 
