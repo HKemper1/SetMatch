@@ -8,7 +8,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c01935fe-021b-440f-8fed-b0edc81c675a" name="Changes" comment="php" />
+    <list default="true" id="c01935fe-021b-440f-8fed-b0edc81c675a" name="Changes" comment="php">
+      <change afterPath="$PROJECT_DIR$/sqlite_db.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/anmeldung.php" beforeDir="false" afterPath="$PROJECT_DIR$/anmeldung.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/db.php" beforeDir="false" afterPath="$PROJECT_DIR$/db/db.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/registrierung.php" beforeDir="false" afterPath="$PROJECT_DIR$/registrierung.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -92,7 +98,7 @@
       <workItem from="1714477428183" duration="4916000" />
       <workItem from="1715182314201" duration="1987000" />
       <workItem from="1715587467637" duration="21064000" />
-      <workItem from="1716995027369" duration="2915000" />
+      <workItem from="1716995027369" duration="4504000" />
     </task>
     <task id="LOCAL-00001" summary="add files">
       <created>1713271058005</created>
@@ -213,7 +219,21 @@
       <option name="project" value="LOCAL" />
       <updated>1716997841537</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="php">
+      <created>1716997999473</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1716997999473</updated>
+    </task>
+    <task id="LOCAL-00019" summary="php">
+      <created>1716998021740</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1716998021740</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

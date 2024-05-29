@@ -18,30 +18,21 @@ require_once $abs_path . "/db/db.php";
                 $teamname = $_POST['teamname'];
                 $password = $_POST['password'];
 
-                // Prepare and bind
-                $stmt = $conn->prepare("SELECT * FROM users WHERE teamname = ?");
-                $stmt->bind_param("s", $teamname);
-                $stmt->execute();
-                $result = $stmt->get_result();
+                try {
+                    $stmt = $db->prepare("SELECT * FROM users WHERE teamname = :teamname");
+                    $stmt->execute(['teamname' => $teamname]);
+                    $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-                if ($result->num_rows > 0) {
-                    $row = $result->fetch_assoc();
-                    if (password_verify($password, $row['password'])) {
-                        echo "Anmeldung erfolgreich!";
-                        // Start session or redirect user
-                        session_start();
+                    if ($user && password_verify($password, $user['password'])) {
                         $_SESSION['teamname'] = $teamname;
-                        // Redirect to a logged-in page
-                        header("Location: index.php");
+                        header("Location: willkommen.php");
                         exit();
                     } else {
-                        echo "Falsches Passwort!";
+                        echo "Teamname oder Passwort falsch!";
                     }
-                } else {
-                    echo "Kein Benutzer gefunden!";
+                } catch (Exception $e) {
+                    echo "Fehler: " . $e->getMessage();
                 }
-
-                $stmt->close();
             }
             ?>
 
