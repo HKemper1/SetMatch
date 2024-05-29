@@ -206,6 +206,7 @@ input[type=text], select, textarea {
 @import url(basicStyle/text.css);
 @import url(basicStyle/button.css);
 @import url(basicStyle/basics.css);
+@import url(basicStyle/textbox.css);
 
 /* IndividualStyles (Unterseite) */
 @import url(individualStyles/anmeldungStyle.css);

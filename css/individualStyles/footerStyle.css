@@ -1,18 +1,19 @@
-/*.footer {
-    position:fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
+
+.footer {
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
     background: #616467;
-    color: #000000;
-    height: auto;
 }
+
 .footer a {
-    color:#ffffff;
+    padding-left: 15px;
+    padding-right: 15px;
+    color:white;
     text-decoration: none;
 }
 
 .footer a:hover {
-    color: rgb(103, 97, 97);
-}*/
+    color: black;
+}
