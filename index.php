@@ -19,18 +19,20 @@ require_once $abs_path . "/php/include/head.php";
         require_once $abs_path . "/php/include/header.php";
 ?>
 <main>
-    <section class="box">
+    <section class="anmContainer anmBody">
         <?php if(isset($_SESSION['teamname'])): ?>
             <h1>Willkommen, <?php echo htmlspecialchars($_SESSION['teamname']); ?>!</h1>
         <?php else: ?>
             <h1>Willkommen!</h1>
             <p>Sie sind nicht angemeldet.</p>
         <?php endif; ?>
+        <div class="anmContainer anmBody">
         <iframe src="https://www.nwvv.de/cms/home/spielbetrieb/m_ligen/vl.xhtml?LeaguePresenter.view=resultTable&LeaguePresenter.matchSeriesId=36634909#samsCmsComponent_436163"
                 width="100%" height="450" style="border:0;" allowfullscreen=""></iframe>
-        <br>
+        </div>
+            <br>
     </section>
-    <section class="box">
+    <section class="anmContainer anmBody">
             <?php if (isset($_SESSION["message"]) && $_SESSION["message"] == "invalid_entry_id"): ?>
                 <p>
                     Der angegebene Gästebucheintrag kann leider nicht gefunden werden.
@@ -74,7 +76,7 @@ require_once $abs_path . "/php/include/head.php";
                 <?php endif; ?>
             </ul>
     </section>
-    <section class="box">
+    <section class="anmContainer anmBody">
 
         <?php if (isset($_SESSION["message"]) && $_SESSION["message"] == "missing_required_parameters"): ?>
             <p>
