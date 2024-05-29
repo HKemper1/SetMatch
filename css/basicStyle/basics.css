@@ -1,0 +1,16 @@
+body {
+    background-color: whitesmoke;
+    box-sizing: border-box;
+    line-height: 1.4;
+    margin: 25px;
+    padding: 15px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+h1 {
+    margin: 5px;
+}
+
+h2 {
+    margin-bottom: 5px;
+}

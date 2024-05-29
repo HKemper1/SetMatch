@@ -61,7 +61,7 @@ require_once $abs_path . "/php/include/head.php";
         </div>
 
         <div>
-            <h2>Team Beta</h2>
+            <h2 class="großerText">Team Beta</h2>
             <p class="normalerText">
                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
                 labore et
