@@ -25,7 +25,6 @@ if (!isset($abs_path)) {
     <div class="teamInfo">
         <div class="unsereStaerken">
             <img src="images/teamseite/starspieler.png"
-                        srcset="logo-160x160 2x"
                         alt="Starspieler"
                         width="64"
 		                height="64">
