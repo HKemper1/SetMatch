@@ -18,6 +18,7 @@ try {
         $testData = [
             ['teamname' => 'testteam1', 'email' => 'test1@example.com', 'password' => password_hash('password1', PASSWORD_DEFAULT)],
             ['teamname' => 'testteam2', 'email' => 'test2@example.com', 'password' => password_hash('password2', PASSWORD_DEFAULT)],
+            ['teamname' => 'test', 'email' => 'test2@example.com', 'password' => password_hash('12345678', PASSWORD_DEFAULT)],
         ];
         $stmt = $db->prepare("INSERT INTO users (teamname, email, password) VALUES (:teamname, :email, :password)");
         foreach ($testData as $data) {
