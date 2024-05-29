@@ -1,7 +1,7 @@
 <header class="header">
     
     <nav class="nav normalerText">
-    <img src="././images/basis_images/logo-80x80.png"
+    <img src="../SetMatch/images/basis_images/logo-80x80.png"
                 srcset="logo-160x160 2x"
                 alt="SetMatch"
                 width="80"
