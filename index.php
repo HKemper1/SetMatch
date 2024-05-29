@@ -20,8 +20,13 @@ require_once $abs_path . "/php/include/head.php";
 ?>
 <main>
     <section class="box">
+<<<<<<< HEAD
     <?php if(isset($_SESSION['teamname'])): ?>
             <h1>Willkommen, <?php echo htmlspecialchars($_SESSION["teamname"]); ?>!</h1>
+=======
+        <?php if(isset($_SESSION['teamname'])): ?>
+            <h1>Willkommen, <?php echo htmlspecialchars($_SESSION['teamname']); ?>!</h1>
+>>>>>>> e25af476d7f0d277f3b510644747807435344488
         <?php else: ?>
             <h1>Willkommen!</h1>
             <p>Sie sind nicht angemeldet.</p>
