@@ -1,0 +1,618 @@
+Index: registrierung.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\nif (!isset($abs_path)) {\n    require_once \"path.php\";\n}\n?>\n<?php\nrequire_once $abs_path . \"/php/include/head.php\";\n?>\n<body>\n<?php\n        require_once $abs_path . \"/php/include/header.php\";\n    ?>\n<br>\n<br>\n<br>\n<main>\n    <div class=\"container\">\n        <h1>Registrierung</h1>\n\n        <form>\n            <div>\n                <label for=\"teamname\">Teamname</label>\n                <div>\n                    <input type=\"text\" id=\"teamname\" name=\"teamname\" maxlength=\"100\" required>\n                </div>\n            </div>\n            <div>\n                <label for=\"email\">E-Mail</label>\n                <div>\n                    <input type=\"email\" id=\"email\" name=\"email\" maxlength=\"100\" required>\n                </div>\n            </div>\n\n            <div>\n                <label for=\"password\">Kennwort</label>\n                <div>\n                    <input type=\"password\" id=\"password\" name=\"password\" minlength=\"8\" maxlength=\"100\" required>\n                </div>\n            </div>\n\n            <div>\n                <label for=\"password_repeat\">Kennwort wiederholen:</label>\n                <div>\n                    <input type=\"password\" id=\"password_repeat\" name=\"password_repeat\" minlength=\"8\" maxlength=\"100\"\n                           required>\n                </div>\n            </div>\n\n            <div>\n                <a href=\"anmeldung.php\" class=\"button\">Anmeldung</a>\n                <button class=\"button\" type=\"submit\">Registrieren</button>\n            </div>\n        </form>\n    </div>\n</main>\n<?php\ninclude_once $abs_path . \"/php/include/footer.php\";\n?>\n</body>\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/registrierung.php b/registrierung.php
+--- a/registrierung.php	(revision d2f861f0e316fbfb6fd0a9c7e9178cc373e5e997)
++++ b/registrierung.php	(date 1716896724475)
+@@ -17,8 +17,8 @@
+     <div class="container">
+         <h1>Registrierung</h1>
+ 
+-        <form>
+-            <div>
++        <form action="php/model/Registrieren.php" method="POST">
++        <div>
+                 <label for="teamname">Teamname</label>
+                 <div>
+                     <input type="text" id="teamname" name="teamname" maxlength="100" required>
+Index: teamseite.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\nif (!isset($abs_path)) {\n    require_once \"path.php\";\n}\n?>\n<?php\n        require_once $abs_path . \"/php/include/head.php\";\n?>\n<body>\n<?php\n        require_once $abs_path . \"/php/include/header.php\";\n?>\n\n<main>\n\n    <section class=\"box\">\n        <iframe src=\"https://www.nwvv.de/cms/home/spielbetrieb/m_ligen/vl.xhtml?LeaguePresenter.view=resultTable&LeaguePresenter.matchSeriesId=36634909#samsCmsComponent_436163\"\n                width=\"100%\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\"></iframe>\n        <br>\n    </section>\n    <section class=\"box\">\n        <label>\n            <h2> Hier werden die Testspielanfragen dargestellt.</h2>\n            <br>\n            <label>\n                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam\n                nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,\n                sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.\n                Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.\n                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor\n                invidunt ut labore et dolore magna aliquyam erat,\n                sed diam voluptua. At vero eos et accusam et justo duo dolores\n                et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.\n            </label>\n            <br>\n            <input type=\"submit\" class=\"button\" id=\"anfrage\" name=\"anfrage\" value=\"Anfrage stellen\">\n        </label>\n    </section>\n\n    <section class=\"box\">\n\n    <img src=\"images/teamseite/teambild.png\" alt=\"Mannschaftsbild\">\n        <br>\n        <div>\n            <label>\n                Hier stehen Manschaftsinformationen <br>\n                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam\n                nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,\n                sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.\n                Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.\n                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor\n                invidunt ut labore et dolore magna aliquyam erat,\n                sed diam voluptua. At vero eos et accusam et justo duo dolores\n                et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.\n            </label>\n        </div>\n        <div>\n            <label>\n                Starspieler <br>\n                <img src=\"images/teamseite/starspieler.png\"\n                     srcset=\"logo-160x160 2x\"\n                     alt=\"Starspieler\"\n                     width=\"64\"\n\t\t             height=\"64\">\n            </label>\n        </div>\n    </section>\n    <section class=\"box\">\n        <div class=\"rating\">\n            <div class=\"stars\">\n                <img src=\"images/teamseite/stern.png\" alt=\"Stern\" width=\"24\" height=\"24\">\n                <img src=\"images/teamseite/stern.png\" alt=\"Stern\" width=\"24\" height=\"24\">\n                <img src=\"images/teamseite/stern.png\" alt=\"Stern\" width=\"24\" height=\"24\">\n                <img src=\"images/teamseite/stern.png\" alt=\"Stern\" width=\"24\" height=\"24\">\n                <img src=\"images/teamseite/stern.png\" alt=\"Stern\" width=\"24\" height=\"24\">\n            </div>\n        <label>Angriff</label>\n        </div>   \n             <div class=\"rating\">\n                <div class=\"stars\">\n                    <img src=\"images/teamseite/stern.png\" alt=\"Stern\" width=\"24\" height=\"24\">\n                    <img src=\"images/teamseite/stern.png\" alt=\"Stern\" width=\"24\" height=\"24\">\n                    <img src=\"images/teamseite/stern.png\" alt=\"Stern\" width=\"24\" height=\"24\">\n                    <img src=\"images/teamseite/stern.png\" alt=\"Stern\" width=\"24\" height=\"24\">\n                    <img src=\"images/teamseite/stern.png\" alt=\"Stern\" width=\"24\" height=\"24\">\n                </div>\n            <label>Verteidigung</label>\n        </div>\n                \n        <div class=\"rating\">\n            <div class=\"stars\">\n                <img src=\"images/teamseite/stern.png\" alt=\"Stern\" width=\"24\" height=\"24\">\n                <img src=\"images/teamseite/stern.png\" alt=\"Stern\" width=\"24\" height=\"24\">\n                <img src=\"images/teamseite/stern.png\" alt=\"Stern\" width=\"24\" height=\"24\">\n                <img src=\"images/teamseite/stern.png\" alt=\"Stern\" width=\"24\" height=\"24\">\n                <img src=\"images/teamseite/stern.png\" alt=\"Stern\" width=\"24\" height=\"24\">\n            </div>\n                <label>Organisation</label>\n            </div>\n            \n            <div class=\"rating\">\n                <div class=\"stars\">\n                    <img src=\"images/teamseite/stern.png\" alt=\"Stern\" width=\"24\" height=\"24\">\n                    <img src=\"images/teamseite/stern.png\" alt=\"Stern\" width=\"24\" height=\"24\">\n                    <img src=\"images/teamseite/stern.png\" alt=\"Stern\" width=\"24\" height=\"24\">\n                    <img src=\"images/teamseite/stern.png\" alt=\"Stern\" width=\"24\" height=\"24\">\n                    <img src=\"images/teamseite/stern.png\" alt=\"Stern\" width=\"24\" height=\"24\">\n                </div>\n                <label>Zuverlässigkeit</label>\n            </div>\n        </div>\n    </section>\n\n    <section class=\"box\">\n\n        <div>\n            <label>\n                Spielfeld\n            </label>\n            <br>\n            <img src=\"images/teamseite/spieler.png\" alt=\"Außen\" width=\"40\" height=\"40\">\n            <img src=\"images/teamseite/spieler.png\" alt=\"Mitte\" width=\"40\" height=\"40\">\n            <img src=\"images/teamseite/spieler.png\" alt=\"Zuspieler\" width=\"40\" height=\"40\">\n            <br>\n            <img src=\"images/teamseite/spieler.png\" alt=\"Außen\" width=\"40\" height=\"40\">\n            <img src=\"images/teamseite/spieler.png\" alt=\"Libero\" width=\"40\" height=\"40\">\n            <img src=\"images/teamseite/spieler.png\" alt=\"Diagonal\" width=\"40\" height=\"40\">\n            <br>\n            <img src=\"images/teamseite/spieler.png\" alt=\"Trainer\" width=\"40\" height=\"40\">\n        </div>\n    </section>\n\n</main>\n<?php\ninclude_once $abs_path . \"/php/include/footer.php\";\n?>\n</body>\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/teamseite.php b/teamseite.php
+--- a/teamseite.php	(revision d2f861f0e316fbfb6fd0a9c7e9178cc373e5e997)
++++ b/teamseite.php	(date 1716902769715)
+@@ -1,138 +1,0 @@
+-<?php
+-if (!isset($abs_path)) {
+-    require_once "path.php";
+-}
+-?>
+-<?php
+-        require_once $abs_path . "/php/include/head.php";
+-?>
+-<body>
+-<?php
+-        require_once $abs_path . "/php/include/header.php";
+-?>
+-
+-<main>
+-
+-    <section class="box">
+-        <iframe src="https://www.nwvv.de/cms/home/spielbetrieb/m_ligen/vl.xhtml?LeaguePresenter.view=resultTable&LeaguePresenter.matchSeriesId=36634909#samsCmsComponent_436163"
+-                width="100%" height="450" style="border:0;" allowfullscreen=""></iframe>
+-        <br>
+-    </section>
+-    <section class="box">
+-        <label>
+-            <h2> Hier werden die Testspielanfragen dargestellt.</h2>
+-            <br>
+-            <label>
+-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+-                nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+-                sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+-                Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+-                invidunt ut labore et dolore magna aliquyam erat,
+-                sed diam voluptua. At vero eos et accusam et justo duo dolores
+-                et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+-            </label>
+-            <br>
+-            <input type="submit" class="button" id="anfrage" name="anfrage" value="Anfrage stellen">
+-        </label>
+-    </section>
+-
+-    <section class="box">
+-
+-    <img src="images/teamseite/teambild.png" alt="Mannschaftsbild">
+-        <br>
+-        <div>
+-            <label>
+-                Hier stehen Manschaftsinformationen <br>
+-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+-                nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+-                sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+-                Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+-                invidunt ut labore et dolore magna aliquyam erat,
+-                sed diam voluptua. At vero eos et accusam et justo duo dolores
+-                et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+-            </label>
+-        </div>
+-        <div>
+-            <label>
+-                Starspieler <br>
+-                <img src="images/teamseite/starspieler.png"
+-                     srcset="logo-160x160 2x"
+-                     alt="Starspieler"
+-                     width="64"
+-		             height="64">
+-            </label>
+-        </div>
+-    </section>
+-    <section class="box">
+-        <div class="rating">
+-            <div class="stars">
+-                <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
+-                <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
+-                <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
+-                <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
+-                <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
+-            </div>
+-        <label>Angriff</label>
+-        </div>   
+-             <div class="rating">
+-                <div class="stars">
+-                    <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
+-                    <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
+-                    <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
+-                    <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
+-                    <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
+-                </div>
+-            <label>Verteidigung</label>
+-        </div>
+-                
+-        <div class="rating">
+-            <div class="stars">
+-                <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
+-                <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
+-                <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
+-                <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
+-                <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
+-            </div>
+-                <label>Organisation</label>
+-            </div>
+-            
+-            <div class="rating">
+-                <div class="stars">
+-                    <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
+-                    <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
+-                    <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
+-                    <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
+-                    <img src="images/teamseite/stern.png" alt="Stern" width="24" height="24">
+-                </div>
+-                <label>Zuverlässigkeit</label>
+-            </div>
+-        </div>
+-    </section>
+-
+-    <section class="box">
+-
+-        <div>
+-            <label>
+-                Spielfeld
+-            </label>
+-            <br>
+-            <img src="images/teamseite/spieler.png" alt="Außen" width="40" height="40">
+-            <img src="images/teamseite/spieler.png" alt="Mitte" width="40" height="40">
+-            <img src="images/teamseite/spieler.png" alt="Zuspieler" width="40" height="40">
+-            <br>
+-            <img src="images/teamseite/spieler.png" alt="Außen" width="40" height="40">
+-            <img src="images/teamseite/spieler.png" alt="Libero" width="40" height="40">
+-            <img src="images/teamseite/spieler.png" alt="Diagonal" width="40" height="40">
+-            <br>
+-            <img src="images/teamseite/spieler.png" alt="Trainer" width="40" height="40">
+-        </div>
+-    </section>
+-
+-</main>
+-<?php
+-include_once $abs_path . "/php/include/footer.php";
+-?>
+-</body>
+-</html>
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AnalysisUIOptions\">\n    <option name=\"ANALYZE_INJECTED_CODE\" value=\"false\" />\n    <option name=\"SCOPE_TYPE\" value=\"3\" />\n  </component>\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"c01935fe-021b-440f-8fed-b0edc81c675a\" name=\"Changes\" comment=\"Forum\" />\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"ComposerSettings\">\n    <execution />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"HTML File\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\n      <map>\n        <entry key=\"$PROJECT_DIR$\" value=\"Hendrik_Punke_Aufgabe_3_test\" />\n      </map>\n    </option>\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProblemsViewState\">\n    <option name=\"selectedTabId\" value=\"CurrentFile\" />\n  </component>\n  <component name=\"ProjectId\" id=\"2fBNhdpiSz449prWsaz3CMuVJrf\" />\n  <component name=\"ProjectLevelVcsManager\">\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\n  </component>\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\n    &quot;last_opened_file_path&quot;: &quot;/Applications/XAMPP/xamppfiles/htdocs/SetMatch&quot;,\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\n    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,\n    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\n  }\n}</component>\n  <component name=\"RecentsManager\">\n    <key name=\"CopyFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$\" />\n    </key>\n  </component>\n  <component name=\"RunManager\" selected=\"PHP Script.Anmelden.php\">\n    <configuration name=\"Anmelden.php\" type=\"PhpLocalRunConfigurationType\" factoryName=\"PHP Console\" path=\"$PROJECT_DIR$/php/controller/Anmelden.php\">\n      <method v=\"2\" />\n    </configuration>\n    <configuration name=\"head.php\" type=\"PhpLocalRunConfigurationType\" factoryName=\"PHP Console\" path=\"$PROJECT_DIR$/php/head.php\">\n      <method v=\"2\" />\n    </configuration>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"c01935fe-021b-440f-8fed-b0edc81c675a\" name=\"Changes\" comment=\"\" />\n      <created>1713270632553</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1713270632553</updated>\n      <workItem from=\"1713270635115\" duration=\"6476000\" />\n      <workItem from=\"1713777066555\" duration=\"900000\" />\n      <workItem from=\"1713779164459\" duration=\"7044000\" />\n      <workItem from=\"1713789165363\" duration=\"1072000\" />\n      <workItem from=\"1713790379746\" duration=\"2730000\" />\n      <workItem from=\"1714477428183\" duration=\"4916000\" />\n      <workItem from=\"1715182314201\" duration=\"1987000\" />\n      <workItem from=\"1715587467637\" duration=\"21064000\" />\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"add files\">\n      <created>1713271058005</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1713271058005</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"add files\">\n      <created>1713276258528</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1713276258528</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"add files\">\n      <created>1713277544107</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1713277544107</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"add files\">\n      <created>1713786179811</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1713786179811</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"add files\">\n      <created>1713788280180</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1713788280181</updated>\n    </task>\n    <task id=\"LOCAL-00006\" summary=\"add files\">\n      <created>1714557535495</created>\n      <option name=\"number\" value=\"00006\" />\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1714557535495</updated>\n    </task>\n    <task id=\"LOCAL-00007\" summary=\"include\">\n      <created>1715593215201</created>\n      <option name=\"number\" value=\"00007\" />\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1715593215201</updated>\n    </task>\n    <task id=\"LOCAL-00008\" summary=\"pfad angepast\">\n      <created>1715593831833</created>\n      <option name=\"number\" value=\"00008\" />\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1715593831833</updated>\n    </task>\n    <task id=\"LOCAL-00009\" summary=\"pfad angepast\">\n      <created>1715594243449</created>\n      <option name=\"number\" value=\"00009\" />\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1715594243449</updated>\n    </task>\n    <task id=\"LOCAL-00010\" summary=\"pfad angepast\">\n      <created>1715594300645</created>\n      <option name=\"number\" value=\"00010\" />\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1715594300645</updated>\n    </task>\n    <task id=\"LOCAL-00011\" summary=\"login registrieren\">\n      <created>1715774601203</created>\n      <option name=\"number\" value=\"00011\" />\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1715774601203</updated>\n    </task>\n    <task id=\"LOCAL-00012\" summary=\"Forum\">\n      <created>1715781318482</created>\n      <option name=\"number\" value=\"00012\" />\n      <option name=\"presentableId\" value=\"LOCAL-00012\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1715781318482</updated>\n    </task>\n    <task id=\"LOCAL-00013\" summary=\"Forum\">\n      <created>1715781335267</created>\n      <option name=\"number\" value=\"00013\" />\n      <option name=\"presentableId\" value=\"LOCAL-00013\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1715781335267</updated>\n    </task>\n    <task id=\"LOCAL-00014\" summary=\"Forum\">\n      <created>1715781827394</created>\n      <option name=\"number\" value=\"00014\" />\n      <option name=\"presentableId\" value=\"LOCAL-00014\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1715781827394</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"15\" />\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State>\n              <option name=\"FILTERS\">\n                <map>\n                  <entry key=\"branch\">\n                    <value>\n                      <list>\n                        <option value=\"origin/main\" />\n                      </list>\n                    </value>\n                  </entry>\n                </map>\n              </option>\n            </State>\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"add files\" />\n    <MESSAGE value=\"include\" />\n    <MESSAGE value=\"pfad angepast\" />\n    <MESSAGE value=\"login registrieren\" />\n    <MESSAGE value=\"Forum\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Forum\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision d2f861f0e316fbfb6fd0a9c7e9178cc373e5e997)
++++ b/.idea/workspace.xml	(date 1716994340974)
+@@ -8,7 +8,18 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="c01935fe-021b-440f-8fed-b0edc81c675a" name="Changes" comment="Forum" />
++    <list default="true" id="c01935fe-021b-440f-8fed-b0edc81c675a" name="Changes" comment="php">
++      <change afterPath="$PROJECT_DIR$/db/db.php" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/php/model/Anmelden.php" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/php/model/Registrieren.php" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/php/model/SaveProfile.php" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/profile.php" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/anmeldung.php" beforeDir="false" afterPath="$PROJECT_DIR$/anmeldung.php" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/php/include/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/include/header.php" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/registrierung.php" beforeDir="false" afterPath="$PROJECT_DIR$/registrierung.php" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/teamseite.php" beforeDir="false" afterPath="$PROJECT_DIR$/teamseite.php" afterDir="false" />
++    </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -27,7 +38,7 @@
+   <component name="Git.Settings">
+     <option name="RECENT_BRANCH_BY_REPOSITORY">
+       <map>
+-        <entry key="$PROJECT_DIR$" value="Hendrik_Punke_Aufgabe_3_test" />
++        <entry key="$PROJECT_DIR$" value="clear_code_Php" />
+       </map>
+     </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+@@ -65,6 +76,9 @@
+   <component name="RecentsManager">
+     <key name="CopyFile.RECENT_KEYS">
+       <recent name="$PROJECT_DIR$" />
++    </key>
++    <key name="MoveFile.RECENT_KEYS">
++      <recent name="$PROJECT_DIR$/db" />
+     </key>
+   </component>
+   <component name="RunManager" selected="PHP Script.Anmelden.php">
+@@ -190,7 +204,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1715781827394</updated>
+     </task>
+-    <option name="localTasksCounter" value="15" />
++    <task id="LOCAL-00015" summary="php">
++      <created>1716994178716</created>
++      <option name="number" value="00015" />
++      <option name="presentableId" value="LOCAL-00015" />
++      <option name="project" value="LOCAL" />
++      <updated>1716994178716</updated>
++    </task>
++    <option name="localTasksCounter" value="16" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -225,6 +246,7 @@
+     <MESSAGE value="pfad angepast" />
+     <MESSAGE value="login registrieren" />
+     <MESSAGE value="Forum" />
+-    <option name="LAST_COMMIT_MESSAGE" value="Forum" />
++    <MESSAGE value="php" />
++    <option name="LAST_COMMIT_MESSAGE" value="php" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: php/model/Anmelden.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/php/model/Anmelden.php b/php/model/Anmelden.php
+new file mode 100644
+--- /dev/null	(date 1716897135545)
++++ b/php/model/Anmelden.php	(date 1716897135545)
+@@ -0,0 +1,38 @@
++<?php
++session_start();
++require_once 'db/db.php'; // Datenbankverbindung
++
++$login_error = '';
++
++if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])) {
++    $teamname = $_POST['teamname'];
++    $password = $_POST['password'];
++
++    // Überprüfen Benutzername vorhanden
++    $stmt = $conn->prepare("SELECT id, password FROM users WHERE teamname = ?");
++    $stmt->bind_param("s", $teamname);
++    $stmt->execute();
++    $stmt->store_result();
++
++    if ($stmt->num_rows > 0) {
++        $stmt->bind_result($user_id, $hashed_password);
++        $stmt->fetch();
++
++        // Passwort korrekt
++        if (password_verify($password, $hashed_password)) {
++            $_SESSION['teamname'] = $teamname;
++            $_SESSION['user_id'] = $user_id;
++            header("Location: index.php");
++            exit;
++        } else {
++            $login_error = "Falsches Passwort.";
++        }
++    } else {
++        $login_error = "Benutzername nicht gefunden.";
++    }
++
++    $stmt->close();
++}
++
++$conn->close();
++?>
+Index: php/model/Registrieren.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/php/model/Registrieren.php b/php/model/Registrieren.php
+new file mode 100644
+--- /dev/null	(date 1716896422591)
++++ b/php/model/Registrieren.php	(date 1716896422591)
+@@ -0,0 +1,45 @@
++<?php
++session_start();
++require_once 'db.php'; // Datei mit der Datenbankverbindung einbinden
++
++if ($_SERVER["REQUEST_METHOD"] == "POST") {
++    $teamname = $_POST['teamname'];
++    $email = $_POST['email'];
++    $password = $_POST['password'];
++    $password_repeat = $_POST['password_repeat'];
++
++    // Check if passwords match
++    if ($password === $password_repeat) {
++        // Check if username already exists
++        $stmt = $conn->prepare("SELECT id FROM users WHERE teamname = ?");
++        $stmt->bind_param("s", $teamname);
++        $stmt->execute();
++        $stmt->store_result();
++
++        if ($stmt->num_rows > 0) {
++            $register_error = "Benutzername bereits vergeben";
++        } else {
++            // Hash the password
++            $hashed_password = password_hash($password, PASSWORD_DEFAULT);
++
++            // Insert new user
++            $stmt = $conn->prepare("INSERT INTO users (teamname, email, password) VALUES (?, ?, ?)");
++            $stmt->bind_param("sss", $teamname, $email, $hashed_password);
++
++            if ($stmt->execute()) {
++                $_SESSION['teamname'] = $teamname;
++                header("Location: index.php");
++                exit;
++            } else {
++                $register_error = "Registrierung fehlgeschlagen. Bitte versuche es erneut.";
++            }
++        }
++        $stmt->close();
++    } else {
++        $register_error = "Passwort und Passwort-Wiederholung stimmen nicht überein";
++    }
++}
++
++$conn->close();
++?>
++
+Index: db/db.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/db/db.php b/db/db.php
+new file mode 100644
+--- /dev/null	(date 1716901243034)
++++ b/db/db.php	(date 1716901243034)
+@@ -0,0 +1,25 @@
++<?php
++$servername = "localhost";
++$username = "root";
++$password = "";
++$dbname = "users";
++//CREATE TABLE users (
++//    id INT AUTO_INCREMENT PRIMARY KEY,
++//    teamname VARCHAR(100) NOT NULL,
++//    email VARCHAR(100) NOT NULL,
++//    password VARCHAR(255) NOT NULL
++//);
++
++//INSERT INTO user_profiles (user_id, name, email) VALUES
++//(1, 'Team 1', 'team1@example.com'),
++//(2, 'Team 2', 'team2@example.com'),
++//(3, 'Team 3', 'team3@example.com');
++
++// verbinden
++$conn = new mysqli($servername, $username, $password, $dbname);
++
++// überprüfen
++if ($conn->connect_error) {
++    die("Connection failed: " . $conn->connect_error);
++}
++?>
+Index: php/model/SaveProfile.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/php/model/SaveProfile.php b/php/model/SaveProfile.php
+new file mode 100644
+--- /dev/null	(date 1716899162333)
++++ b/php/model/SaveProfile.php	(date 1716899162333)
+@@ -0,0 +1,28 @@
++<?php
++session_start();
++require_once 'db/db.php'; // Datenbankverbindung
++
++// Überprüfen, ob Benutzer angemeldet ist
++if (!isset($_SESSION['user_id'])) {
++    header("Location: anmeldung.php");
++    exit;
++}
++
++$user_id = $_SESSION['user_id'];
++
++// Profildaten aus dem Formular abrufen
++$name = $_POST['name'];
++$email = $_POST['email'];
++// Weitere Felder entsprechend des Formulars hinzufügen und verarbeiten
++
++// Profildaten in die Datenbank speichern oder aktualisieren
++$stmt = $conn->prepare("INSERT INTO user_profiles (user_id, name, email) VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE name = VALUES(name), email = VALUES(email)");
++$stmt->bind_param("iss", $user_id, $name, $email);
++$stmt->execute();
++$stmt->close();
++
++// Erfolgsmeldung oder Weiterleitung zu Profilseite
++header("Location: profile.php");
++exit;
++?>
++
+Index: profile.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/profile.php b/profile.php
+new file mode 100644
+--- /dev/null	(date 1716902427122)
++++ b/profile.php	(date 1716902427122)
+@@ -0,0 +1,71 @@
++<?php
++if (!isset($abs_path)) {
++    require_once "path.php";
++}
++?>
++<?php
++session_start();
++require_once 'db/db.php'; // Datenbankverbindung
++
++// Überprüfen, ob Benutzer angemeldet ist
++if (!isset($_SESSION['user_id'])) {
++    header("Location: anmeldung.php");
++    exit;
++}
++
++$user_id = $_SESSION['user_id'];
++
++// Profilinformationen abrufen
++$stmt = $conn->prepare("SELECT * FROM user_profiles WHERE user_id = ?");
++$stmt->bind_param("i", $user_id);
++$stmt->execute();
++$result = $stmt->get_result();
++$profile = $result->fetch_assoc();
++$stmt->close();
++?>
++
++<?php
++require_once $abs_path . "/php/include/head.php";
++?>
++
++<body>
++
++<?php
++include_once $abs_path . "/php/include/header.php";
++?>
++<
++
++<main>
++    <section class="profile-box">
++        <h1>Benutzerprofil</h1>
++        <form action="save_profile.php" method="POST">
++            <label for="name">Name:</label>
++            <input type="text" id="name" name="name" value="<?php echo $profile['name']; ?>"><br><br>
++
++            <label for="email">E-Mail:</label>
++            <input type="email" id="email" name="email" value="<?php echo $profile['email']; ?>"><br><br>
++
++            <!-- Weitere Profildatenfelder hier einfügen -->
++
++            <button type="submit">Profil speichern</button>
++        </form>
++    </section>
++
++    <section class="profile-box">
++        <h2>Mannschaftsinformationen</h2>
++        <p>
++            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
++        </p>
++        <!-- Weitere Informationen zur Mannschaft einfügen -->
++    </section>
++
++    <section class="profile-box">
++        <h2>Starspieler</h2>
++        <img src="images/teamseite/starspieler.png" alt="Starspieler">
++    </section>
++</main>
++<?php
++include_once $abs_path . "/php/include/footer.php";
++?>
++</body>
++</html>
+Index: php/include/header.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><header class=\"header\">\n    <img src=\"./images/basis_images/logo-80x80.png\"\n                srcset=\"logo-160x160 2x\"\n                alt=\"SetMatch\"\n                width=\"80\"\n            height=\"80\">\n    <nav class=\"nav normalerText\">\n        <a href=\"index.php\">  Startseite</a>\n        <a href=\"teamseite.php\"> Teamseite</a>\n        <a href=\"anmeldung.php\"> Anmeldung</a>\n        <a href=\"registrierung.php\"> Regestrierung</a>\n        <a> <img src=\"../SetMatch/images/basis_images/glocke.png\" alt=\"Post\"\n                     width=\"16\" height=\"16\"></a>\n    </nav>\n</header>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/php/include/header.php b/php/include/header.php
+--- a/php/include/header.php	(revision d2f861f0e316fbfb6fd0a9c7e9178cc373e5e997)
++++ b/php/include/header.php	(date 1716992768967)
+@@ -9,6 +9,7 @@
+         <a href="teamseite.php"> Teamseite</a>
+         <a href="anmeldung.php"> Anmeldung</a>
+         <a href="registrierung.php"> Regestrierung</a>
++        <a href="profile.php"> Profile</a>
+         <a> <img src="../SetMatch/images/basis_images/glocke.png" alt="Post"
+                      width="16" height="16"></a>
+     </nav>
+Index: anmeldung.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\n    if (!isset($abs_path)) {\n        require_once \"path.php\";\n    }\n?>\n<?php\n    require_once $abs_path . \"/php/include/head.php\";\n?>\n<body>\n    <?php\n        require_once $abs_path . \"/php/include/header.php\";\n    ?>\n    <br>\n    <br>\n    <br>\n    <main>\n        <div class=\"container\">\n        <section>\n            <h1>Anmelden</h1>\n\n            <form action=\"index.php\" method=\"POST\">\n                <div>\n                    <label for=\"teamname\">Teamname</label>\n                    <div>\n                        <input type=\"text\" id=\"teamname\" name=\"teamname\" maxlength=\"100\" required>\n                    </div>\n                </div>\n                <div>\n                    <label for=\"password\">Passwort:</label>\n                    <div>\n                        <input type=\"password\" id=\"password\" name=\"password\" maxlength=\"100\" required>\n                    </div>\n                </div>\n                <div>\n                    <a href=\"registrierung.php\" class=\"button\">Registrieren</a>\n                    <button class=\"button\" type=\"submit\">Anmelden </button>\n                </div>\n            </form>\n        </section>\n        </div>\n    </main>\n    <?php \n        include_once $abs_path . \"/php/include/footer.php\";\n    ?>\n</body>\n\n</html>\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/anmeldung.php b/anmeldung.php
+--- a/anmeldung.php	(revision d2f861f0e316fbfb6fd0a9c7e9178cc373e5e997)
++++ b/anmeldung.php	(date 1716897286224)
+@@ -1,47 +1,47 @@
+ <?php
+-    if (!isset($abs_path)) {
+-        require_once "path.php";
+-    }
++if (!isset($abs_path)) {
++    require_once "path.php";
++}
+ ?>
+ <?php
+-    require_once $abs_path . "/php/include/head.php";
++require_once $abs_path . "/php/include/head.php";
+ ?>
+ <body>
+-    <?php
+-        require_once $abs_path . "/php/include/header.php";
+-    ?>
+-    <br>
+-    <br>
+-    <br>
+-    <main>
+-        <div class="container">
+-        <section>
+-            <h1>Anmelden</h1>
++<?php
++require_once $abs_path . "/php/include/header.php";
++?>
++<br>
++<br>
++<br>
++<main>
++    <div class="container">
++        <h1>Anmelden</h1>
++        <?php if (!empty($login_error)): ?>
++            <div class="error"><?php echo $login_error; ?></div>
++        <?php endif; ?>
+ 
+-            <form action="index.php" method="POST">
+-                <div>
+-                    <label for="teamname">Teamname</label>
+-                    <div>
+-                        <input type="text" id="teamname" name="teamname" maxlength="100" required>
+-                    </div>
+-                </div>
+-                <div>
+-                    <label for="password">Passwort:</label>
+-                    <div>
+-                        <input type="password" id="password" name="password" maxlength="100" required>
+-                    </div>
+-                </div>
+-                <div>
+-                    <a href="registrierung.php" class="button">Registrieren</a>
+-                    <button class="button" type="submit">Anmelden </button>
+-                </div>
+-            </form>
+-        </section>
+-        </div>
+-    </main>
+-    <?php 
+-        include_once $abs_path . "/php/include/footer.php";
+-    ?>
++        <form action="Anmelden.php" method="POST">
++            <div>
++                <label for="teamname">Teamname</label>
++                <div>
++                    <input type="text" id="teamname" name="teamname" maxlength="100" required>
++                </div>
++            </div>
++            <div>
++                <label for="password">Passwort:</label>
++                <div>
++                    <input type="password" id="password" name="password" maxlength="100" required>
++                </div>
++            </div>
++            <div>
++                <a href="registrierung.php" class="button">Registrieren</a>
++                <button class="button" type="submit" name="login">Anmelden</button>
++            </div>
++        </form>
++    </div>
++</main>
++<?php
++include_once $abs_path . "/php/include/footer.php";
++?>
+ </body>
+-
+ </html>

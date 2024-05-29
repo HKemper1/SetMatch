@@ -1,0 +1,76 @@
+Index: php/controller/Registrieren.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\nsession_start();\n\n// Test Nutzer\n$users = array(\n    \"team1\" => \"password1\",\n    \"team2\" => \"password2\",\n    \"team3\" => \"password3\"\n);\n\n// Registrierung\nif ($_SERVER[\"REQUEST_METHOD\"] == \"POST\") {\n    if (isset($_POST['register'])) {\n        $teamname = $_POST['teamname'];\n        $email = $_POST['email'];\n        $password = $_POST['password'];\n        $password_repeat = $_POST['password_repeat'];\n\n        if (!isset($users[$teamname])) {\n            if ($password === $password_repeat) {\n                $users[$teamname] = $password;\n                $_SESSION['teamname'] = $teamname;\n                header(\"Location: index.php\");\n                exit;\n            } else {\n                $register_error = \"Passwort und Passwort-Wiederholung stimmen nicht überein\";\n            }\n        } else {\n            $register_error = \"Benutzername bereits vergeben\";\n        }\n    }\n}\n?>\n>
+===================================================================
+diff --git a/php/controller/Registrieren.php b/php/controller/Registrieren.php
+--- a/php/controller/Registrieren.php	
++++ b/php/controller/Registrieren.php	
+@@ -1,34 +1,44 @@
+ <?php
+ session_start();
++require_once 'db.php'; // Datei mit der Datenbankverbindung einbinden
+ 
+-// Test Nutzer
+-$users = array(
+-    "team1" => "password1",
+-    "team2" => "password2",
+-    "team3" => "password3"
+-);
+-
+-// Registrierung
+ if ($_SERVER["REQUEST_METHOD"] == "POST") {
+-    if (isset($_POST['register'])) {
+-        $teamname = $_POST['teamname'];
+-        $email = $_POST['email'];
+-        $password = $_POST['password'];
+-        $password_repeat = $_POST['password_repeat'];
++    $teamname = $_POST['teamname'];
++    $email = $_POST['email'];
++    $password = $_POST['password'];
++    $password_repeat = $_POST['password_repeat'];
+ 
+-        if (!isset($users[$teamname])) {
+-            if ($password === $password_repeat) {
+-                $users[$teamname] = $password;
++    // Check if passwords match
++    if ($password === $password_repeat) {
++        // Check if username already exists
++        $stmt = $conn->prepare("SELECT id FROM users WHERE teamname = ?");
++        $stmt->bind_param("s", $teamname);
++        $stmt->execute();
++        $stmt->store_result();
++
++        if ($stmt->num_rows > 0) {
++            $register_error = "Benutzername bereits vergeben";
++        } else {
++            // Hash the password
++            $hashed_password = password_hash($password, PASSWORD_DEFAULT);
++
++            // Insert new user
++            $stmt = $conn->prepare("INSERT INTO users (teamname, email, password) VALUES (?, ?, ?)");
++            $stmt->bind_param("sss", $teamname, $email, $hashed_password);
++
++            if ($stmt->execute()) {
+                 $_SESSION['teamname'] = $teamname;
+                 header("Location: index.php");
+                 exit;
+             } else {
+-                $register_error = "Passwort und Passwort-Wiederholung stimmen nicht überein";
+-            }
+-        } else {
+-            $register_error = "Benutzername bereits vergeben";
+-        }
++                $register_error = "Registrierung fehlgeschlagen. Bitte versuche es erneut.";
++            }
++        }
++        $stmt->close();
++    } else {
++        $register_error = "Passwort und Passwort-Wiederholung stimmen nicht überein";
+     }
+ }
++
++$conn->close();
+ ?>
+->
+\ No newline at end of file

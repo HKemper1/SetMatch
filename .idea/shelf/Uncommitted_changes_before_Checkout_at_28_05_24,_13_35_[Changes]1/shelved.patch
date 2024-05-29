@@ -1,0 +1,26 @@
+Index: registrierung.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\nif (!isset($abs_path)) {\n    require_once \"path.php\";\n}\n?>\n<?php\nrequire_once $abs_path . \"/php/include/head.php\";\n?>\n<body>\n<?php\nrequire_once $abs_path . \"/php/include/header.php\";\n?>\n<br>\n<br>\n<br>\n<main>\n    <div class=\"container\">\n        <h1>Registrierung</h1>\n\n        <form>\n            <div>\n                <label for=\"teamname\">Teamname</label>\n                <div>\n                    <input type=\"text\" id=\"teamname\" name=\"teamname\" maxlength=\"100\" required>\n                </div>\n            </div>\n            <div>\n                <label for=\"email\">E-Mail</label>\n                <div>\n                    <input type=\"email\" id=\"email\" name=\"email\" maxlength=\"100\" required>\n                </div>\n            </div>\n\n            <div>\n                <label for=\"password\">Kennwort</label>\n                <div>\n                    <input type=\"password\" id=\"password\" name=\"password\" minlength=\"8\" maxlength=\"100\" required>\n                </div>\n            </div>\n\n            <div>\n                <label for=\"password_repeat\">Kennwort wiederholen:</label>\n                <div>\n                    <input type=\"password\" id=\"password_repeat\" name=\"password_repeat\" minlength=\"8\" maxlength=\"100\"\n                           required>\n                </div>\n            </div>\n\n            <div>\n                <a href=\"anmeldung.php\" class=\"button\">Anmeldung</a>\n                <button class=\"button\" type=\"submit\">Registrieren</button>\n            </div>\n        </form>\n    </div>\n</main>\n<?php\ninclude_once $abs_path . \"/php/include/footer.php\";\n?>\n</body>\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/registrierung.php b/registrierung.php
+--- a/registrierung.php	
++++ b/registrierung.php	
+@@ -17,7 +17,7 @@
+     <div class="container">
+         <h1>Registrierung</h1>
+ 
+-        <form>
++        <form action="Registrieren.php" method="POST">
+             <div>
+                 <label for="teamname">Teamname</label>
+                 <div>
+@@ -57,4 +57,4 @@
+ include_once $abs_path . "/php/include/footer.php";
+ ?>
+ </body>
+-</html>
+\ No newline at end of file
++</html>
