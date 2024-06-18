@@ -1,0 +1,38 @@
+.spaContainer {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.spaPost-block {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+    transition: transform 0.2s;
+}
+.spaPost-block:hover {
+    transform: scale(1.02);
+}
+.spaPost-header {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.spaPost-content {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+.spaPost-actions {
+    display: flex;
+    justify-content: space-between;
+}
+.spaPost-actions a {
+    text-decoration: none;
+    color: #007BFF;
+    font-size: 14px;
+}
+.spaPost-actions a:hover {
+    text-decoration: underline;
+}

@@ -7,7 +7,7 @@ if (!isset($abs_path)) {
 require_once $abs_path . "/php/model/Eintrag.php";
 require_once $abs_path . "/php/model/Forum.php";
 
-// Ueberpruefung der Parameter
+// Überprüfung der Parameter
 if (!isset($_POST["ueberschrift"]) || !isset($_POST["text"]) || !isset($_POST["submit"])) {
     $_SESSION["message"] = "missing_parameters";
     header("Location: ../../index.php");
@@ -16,30 +16,25 @@ if (!isset($_POST["ueberschrift"]) || !isset($_POST["text"]) || !isset($_POST["s
 
 if (!empty($_POST["ueberschrift"])) {
     try {
-        // Aufbereitung der Daten fuer die Kontaktierung des Models
+        // Aufbereitung der Daten für die Kontaktierung des Models
         // Hinweis: hier nichts zu tun
 
-        // Kontaktierung des Models (Geschaeftslogik)
+        // Kontaktierung des Models (Geschäftslogik)
         $forum = Forum::getInstance();
-        $forum->neuerEintrag($_POST["ueberschrift"], $_POST["email"], $_POST["text"]);
+        $forum->neuerEintrag($_POST["ueberschrift"], $_POST["text"]);
     } catch (InternerFehlerException $exc) {
-        // Behandlung von potentiellen Fehlern der Geschaeftslogik
+        // Behandlung von potentiellen Fehlern der Geschäftslogik
         $_SESSION["message"] = "internal_error";
         header("Location: ../../index.php");
         exit;
     }
 
-// Aufbereitung der Daten fuer die Ausgabe (View)
-    $_SESSION["message"] = "new_entry";
-
-// die Ausgabe des HTML-Codes kann erfolgen
-    header("Location: ../../index.php");
+    // Weiterleitung mit Erfolgsmeldung und den eingegebenen Daten
+    header("Location: ../../index.php?message=new_entry&ueberschrift=" . urlencode($_POST["ueberschrift"]) . "&text=" . urlencode($_POST["text"]));
     exit;
 } else {
-    $_SESSION["message"] = "missing_required_parameters";
-    $_SESSION["ueberschrift"] = $_POST["ueberschrift"];
-    $_SESSION["text"] = $_POST["text"];
-    header("Location: ../../index.php");
+    // Weiterleitung mit Fehlermeldung und den eingegebenen Daten
+    header("Location: ../../index.php?message=missing_required_parameters&ueberschrift=" . urlencode($_POST["ueberschrift"]) . "&text=" . urlencode($_POST["text"]));
     exit;
 }
 

@@ -1,5 +1,4 @@
 <?php
-require_once "ForumFix.php";
 require_once "ForumPDOSQLite.php";
 
 /*

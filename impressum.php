@@ -6,7 +6,6 @@
 <?php
     require_once $abs_path . "/php/include/head.php";
 ?>
-
 <body>
 
     <?php

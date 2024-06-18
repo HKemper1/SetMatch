@@ -1,9 +1,12 @@
 <?php
+session_start(); // Sitzung starten
+
 if (!isset($abs_path)) {
     require_once "path.php";
 }
 require_once $abs_path . "/php/include/head.php";
 require_once $abs_path . "/db/db.php";
+require_once $abs_path . "/php/controller/Anmeldung.php";
 ?>
 
 <body>
@@ -12,30 +15,6 @@ require_once $abs_path . "/db/db.php";
     <div class="anmContainer anmBody">
         <section>
             <h1>Anmelden</h1>
-
-            <?php
-            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-                $teamname = $_POST['teamname'];
-                $password = $_POST['password'];
-
-                try {
-                    $stmt = $db->prepare("SELECT * FROM users WHERE teamname = :teamname");
-                    $stmt->execute(['teamname' => $teamname]);
-                    $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
-                    if ($user && password_verify($password, $user['password'])) {
-                        $_SESSION['teamname'] = $teamname;
-                        header("Location: index.php");
-                        exit();
-                    } else {
-                        echo "Teamname oder Passwort falsch!";
-                    }
-                } catch (Exception $e) {
-                    echo "Fehler: " . $e->getMessage();
-                }
-            }
-            ?>
-
             <form class="formContainerAnm" action="" method="POST">
                 <div>
                     <label class="labelAnm" for="teamname">Teamname</label>
@@ -54,16 +33,6 @@ require_once $abs_path . "/db/db.php";
                     <button class="button" type="submit">Anmelden</button>
                 </div>
             </form>
-
-            <?php
-            if ($count == 0 && $_SERVER['REQUEST_METHOD'] == 'POST') {
-                // Registrierung erfolgreich, Benutzer anmelden
-                $_SESSION['teamname'] = $teamname;
-                // Weiterleitung zu Inex
-                header("Location: index.php");
-                exit();
-            }
-            ?>
         </section>
     </div>
 </main>
