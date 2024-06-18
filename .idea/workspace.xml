@@ -9,40 +9,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c01935fe-021b-440f-8fed-b0edc81c675a" name="Changes" comment="php">
-      <change afterPath="$PROJECT_DIR$/check-name.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/individualStyles/spielanfragenStyle.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/kommentar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/registrierung.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/spieler.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/suche.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/vorschau.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/php/controller/Anmeldung.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/php/controller/Registrierung.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/php/controller/kommentar-laden.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/php/controller/kommentar-neu.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/php/controller/kommentar.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/php/controller/suche.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/php/controller/update-team.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/planung/README" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_05_24,_13_35_[Changes]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_05_24__13_35__Changes_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anmeldung.php" beforeDir="false" afterPath="$PROJECT_DIR$/anmeldung.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database.sqlite" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/db/db.php" beforeDir="false" afterPath="$PROJECT_DIR$/db/db.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/forum.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/forum.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/userdb.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/impressum.php" beforeDir="false" afterPath="$PROJECT_DIR$/impressum.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/controller/eintrag-neu-controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/controller/eintrag-neu-controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/include/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/include/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/model/Forum.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/model/Forum.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/model/ForumFix.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/registrierung.php" beforeDir="false" afterPath="$PROJECT_DIR$/registrierung.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/teamseite.php" beforeDir="false" afterPath="$PROJECT_DIR$/teamseite.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +20,9 @@
   </component>
   <component name="ComposerSettings">
     <execution />
+  </component>
+  <component name="ExportToHTMLSettings">
+    <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/exportToHTML" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -134,7 +106,7 @@
       <workItem from="1715587467637" duration="21064000" />
       <workItem from="1716995027369" duration="6065000" />
       <workItem from="1717494959857" duration="10455000" />
-      <workItem from="1718107173444" duration="17845000" />
+      <workItem from="1718107173444" duration="19563000" />
     </task>
     <task id="LOCAL-00001" summary="add files">
       <created>1713271058005</created>
@@ -297,7 +269,14 @@
       <option name="project" value="LOCAL" />
       <updated>1717000813570</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="php">
+      <created>1718694920593</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1718694920593</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

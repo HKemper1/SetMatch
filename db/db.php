@@ -9,8 +9,6 @@ try {
         teamname TEXT,
         email TEXT,
         password TEXT,
-        vorname TEXT,
-        nachname TEXT,
         beschreibung TEXT,
         bild TEXT,
         spieler TEXT
