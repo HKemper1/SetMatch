@@ -9,9 +9,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c01935fe-021b-440f-8fed-b0edc81c675a" name="Changes" comment="php">
+      <change afterPath="$PROJECT_DIR$/js/google-in.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/individualStyles/registrierungStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/individualStyles/registrierungStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/individualStyles/teamseiteStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/individualStyles/teamseiteStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datenschutz.php" beforeDir="false" afterPath="$PROJECT_DIR$/datenschutz.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/db.php" beforeDir="false" afterPath="$PROJECT_DIR$/db/db.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/forum.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/forum.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/basis_images/logo-160x160.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/basis_images/nutzer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/teamseite/feld.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/teamseite/spieler.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/teamseite/teambild.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/impressum.php" beforeDir="false" afterPath="$PROJECT_DIR$/impressum.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/kommentar.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/kommentar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/registrierung.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/spieler.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/spieler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/vorschau.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/vorschau.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nutzerbedingungen.php" beforeDir="false" afterPath="$PROJECT_DIR$/nutzerbedingungen.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/controller/kommentar-laden.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/controller/kommentar-laden.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/controller/kommentar-neu.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/controller/kommentar-neu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/controller/update-team.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/controller/update-team.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/include/head.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/include/head.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/model/ForumPDOSQLite.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/model/ForumPDOSQLite.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/planung/README" beforeDir="false" afterPath="$PROJECT_DIR$/planung/README" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/registrierung.php" beforeDir="false" afterPath="$PROJECT_DIR$/registrierung.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/teamseite.php" beforeDir="false" afterPath="$PROJECT_DIR$/teamseite.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,6 +103,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/js" />
     </key>
   </component>
@@ -106,7 +133,7 @@
       <workItem from="1715587467637" duration="21064000" />
       <workItem from="1716995027369" duration="6065000" />
       <workItem from="1717494959857" duration="10455000" />
-      <workItem from="1718107173444" duration="19563000" />
+      <workItem from="1718107173444" duration="36225000" />
     </task>
     <task id="LOCAL-00001" summary="add files">
       <created>1713271058005</created>
@@ -276,7 +303,14 @@
       <option name="project" value="LOCAL" />
       <updated>1718694920593</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="php">
+      <created>1718696661087</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1718696661087</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -1,6 +1,7 @@
 //JavaScript und AJAX
 - Kommentare unter Anfragen
-- Bei Registrierung automatische kontrolle ob Name bereits vergeben
 - Teamseite: zum hinzufügen weiterer Spieler
 - Teamseite: Drag and Drop von Bildern
 - Index: Möglichkeit Mannschaften zu suchen
+//Api
+Registrierung: Google

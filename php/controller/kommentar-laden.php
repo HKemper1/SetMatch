@@ -1,13 +1,20 @@
 <?php
-require 'db/db.php';
-require 'php/controller/kommentar.php';
+require_once 'php/model/ForumPDOSQLite.php';
 
-$entryId = $_POST['entry_id'];
+header('Content-Type: application/json');
 
-if (!empty($entryId)) {
-    $stmt = $db->prepare("SELECT * FROM comments WHERE entry_id = ? ORDER BY created_at DESC");
-    $stmt->execute([$entryId]);
-    $comments = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    echo json_encode($comments);
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['entry_id'])) {
+    $entryId = intval($_POST['entry_id']);
+    $forum = ForumPDOSQLite::getInstance();
+
+    try {
+        $comments = $forum->getKommentare($entryId);
+        echo json_encode($comments);
+    } catch (Exception $e) {
+        echo json_encode(['error' => $e->getMessage()]);
+    }
+} else {
+    echo json_encode(['error' => 'Ungültige Anfrage.']);
 }
 ?>
+

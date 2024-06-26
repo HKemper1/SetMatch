@@ -15,12 +15,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $spieler = json_encode($_POST['spieler']);
 
     // Bild hochladen, wenn vorhanden
+    $bildName = $_POST['current_bild']; // Default zu bestehendem Bild
     if (isset($_FILES['bild']) && $_FILES['bild']['error'] == UPLOAD_ERR_OK) {
         $bildName = basename($_FILES['bild']['name']);
         $bildPfad = $abs_path . '/uploads/' . $bildName;
-        move_uploaded_file($_FILES['bild']['tmp_name'], $bildPfad);
-    } else {
-        $bildName = $_POST['current_bild'];
+
+        if (move_uploaded_file($_FILES['bild']['tmp_name'], $bildPfad)) {
+            // Erfolgreich hochgeladen
+        } else {
+            echo "Fehler beim Hochladen des Bildes!";
+        }
     }
 
     // Spieler Bilder hochladen, wenn vorhanden
@@ -29,8 +33,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $index = str_replace('spieler_bild_', '', $key);
             $spielerBildName = basename($file['name']);
             $spielerBildPfad = $abs_path . '/uploads/' . $spielerBildName;
-            move_uploaded_file($file['tmp_name'], $spielerBildPfad);
-            $_POST['spieler'][$index]['bild'] = $spielerBildName;
+
+            if (move_uploaded_file($file['tmp_name'], $spielerBildPfad)) {
+                $_POST['spieler'][$index]['bild'] = $spielerBildName;
+            } else {
+                echo "Fehler beim Hochladen des Spielerbildes: " . $file['name'];
+            }
         }
     }
 
@@ -48,5 +56,4 @@ $stmt->execute(['teamname' => $teamname]);
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
 $spieler = json_decode($user['spieler'], true) ?? [];
-
 ?>

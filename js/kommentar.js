@@ -5,9 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const newCommentTextarea = block.querySelector('.new-comment');
         const addCommentButton = block.querySelector('.add-comment');
 
-
         fetchComments(entryId, commentsList);
-
 
         addCommentButton.addEventListener('click', () => {
             const commentText = newCommentTextarea.value;

@@ -1,14 +1,20 @@
 <?php
-require 'db/db.php';
-require 'php/controller/kommentar.php';
+require_once 'php/model/ForumPDOSQLite.php';
 
-$entryId = $_POST['entry_id'];
-$commentText = $_POST['comment_text'];
+header('Content-Type: application/json');
 
-if (!empty($entryId) && !empty($commentText)) {
-    $stmt = $db->prepare("INSERT INTO comments (entry_id, comment_text, created_at) VALUES (?, ?, datetime('now'))");
-    $stmt->execute([$entryId, $commentText]);
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['entry_id']) && isset($_POST['comment_text'])) {
+    $entryId = intval($_POST['entry_id']);
+    $commentText = trim($_POST['comment_text']);
+    $forum = ForumPDOSQLite::getInstance();
+
+    try {
+        $forum->neuerKommentar($entryId, $commentText);
+        echo json_encode(['success' => true]);
+    } catch (Exception $e) {
+        echo json_encode(['success' => false, 'error' => $e->getMessage()]);
+    }
+} else {
+    echo json_encode(['success' => false, 'error' => 'Ungültige Anfrage.']);
 }
-
-echo json_encode(['success' => true]);
 ?>

@@ -18,22 +18,31 @@
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     border-radius: 25px;
 }
-
 .formContainerReg {
     display: flex;
-    flex-direction: column;
+    align-items: center; /* Elemente vertikal zentrieren */
 }
 
-.formContainerReg div {
-    margin-bottom: 15px;
+.formContainerReg label {
+    display: flex; /* Text neben Checkbox ausrichten */
+    align-items: center; /* Text vertikal zentrieren */
+}
+
+.formContainerReg input[type="checkbox"] {
+    margin-right: 10px; /* Abstand zwischen Checkbox und Text */
 }
 
 .labelReg {
     margin-bottom: 5px;
     display: block;
     font-weight: bold;
-    color: Black;
+    color: black;
 }
+
+.formContainerReg div {
+    margin-bottom: 15px;
+}
+
 
 .inputReg[type] {
     width: 95%;

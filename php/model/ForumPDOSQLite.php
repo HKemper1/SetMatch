@@ -5,6 +5,7 @@ require_once "ForumDAO.php";
 class ForumPDOSQLite implements ForumDAO
 {
     private static $instance = null;
+
     public static function getInstance()
     {
         if (self::$instance == null) {
@@ -28,9 +29,10 @@ class ForumPDOSQLite implements ForumDAO
             }
             return intval($db->lastInsertId());
         } catch (PDOException $exc) {
-            throw new InternerFehlerException();
+            throw new InternerFehlerException($exc->getMessage());
         }
     }
+
     public function getEintrag($id)
     {
         try {
@@ -50,9 +52,10 @@ class ForumPDOSQLite implements ForumDAO
             $entry = $result[0];
             return new Eintrag($entry["id"], $entry["ueberschrift"], $entry["content"]);
         } catch (PDOException $exc) {
-            throw new InternerFehlerException();
+            throw new InternerFehlerException($exc->getMessage());
         }
     }
+
     public function loescheEintrag($id)
     {
         try {
@@ -85,8 +88,10 @@ class ForumPDOSQLite implements ForumDAO
             }
             $db->commit();
         } catch (PDOException $exc) {
-            $db->rollBack();
-            throw new InternerFehlerException();
+            if ($db->inTransaction()) {
+                $db->rollBack();
+            }
+            throw new InternerFehlerException($exc->getMessage());
         }
     }
 
@@ -111,7 +116,47 @@ class ForumPDOSQLite implements ForumDAO
             }
             return $entries;
         } catch (PDOException $exc) {
-            throw new InternerFehlerException();
+            throw new InternerFehlerException($exc->getMessage());
+        }
+    }
+
+    public function neuerKommentar($entryId, $commentText)
+    {
+        try {
+            $db = $this->getConnection();
+            $sql = "INSERT INTO comments (entry_id, comment_text, created_at) VALUES (:entry_id, :comment_text, :created_at)";
+            $command = $db->prepare($sql);
+            if (!$command) {
+                throw new InternerFehlerException();
+            }
+            if (!$command->execute([
+                ":entry_id" => $entryId,
+                ":comment_text" => $commentText,
+                ":created_at" => date('Y-m-d H:i:s')
+            ])) {
+                throw new InternerFehlerException();
+            }
+            return intval($db->lastInsertId());
+        } catch (PDOException $exc) {
+            throw new InternerFehlerException($exc->getMessage());
+        }
+    }
+
+    public function getKommentare($entryId)
+    {
+        try {
+            $db = $this->getConnection();
+            $sql = "SELECT * FROM comments WHERE entry_id = :entry_id ORDER BY created_at DESC";
+            $command = $db->prepare($sql);
+            if (!$command) {
+                throw new InternerFehlerException();
+            }
+            if (!$command->execute([":entry_id" => $entryId])) {
+                throw new InternerFehlerException();
+            }
+            return $command->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $exc) {
+            throw new InternerFehlerException($exc->getMessage());
         }
     }
 
@@ -123,12 +168,12 @@ class ForumPDOSQLite implements ForumDAO
         }
 
         try {
-            $user = 'root';
-            $pw = null;
+            $user = null; // SQLite benötigt keine Benutzerdaten
+            $pw = null; // SQLite benötigt keine Passwörter
             $dsn = 'sqlite:' . $abs_path . '/db/forum.db';
             return new PDO($dsn, $user, $pw);
         } catch (PDOException $e) {
-            throw new InternerFehlerException();
+            throw new InternerFehlerException($e->getMessage());
         }
     }
 
@@ -136,33 +181,42 @@ class ForumPDOSQLite implements ForumDAO
     {
         global $abs_path;
         try {
-            $user = 'root';
-            $pw = null;
+            $user = null; // SQLite benötigt keine Benutzerdaten
+            $pw = null; // SQLite benötigt keine Passwörter
             $dsn = 'sqlite:' . $abs_path . '/db/forum.db';
             $db = new PDO($dsn, $user, $pw);
 
             $db->exec("
-                    CREATE TABLE forum (
-                        id INTEGER PRIMARY KEY AUTOINCREMENT,
-                        ueberschrift TEXT,
-                        content TEXT
-                    );");
+                CREATE TABLE IF NOT EXISTS forum (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    ueberschrift TEXT,
+                    content TEXT
+                );");
             $db->exec("
-                    INSERT INTO forum (ueberschrift, content) VALUES
-                        ('Überschrift 1',  'lorem ipsum 1')
-                    ;");
+                CREATE TABLE IF NOT EXISTS comments (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    entry_id INTEGER NOT NULL,
+                    comment_text TEXT,
+                    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+                    FOREIGN KEY(entry_id) REFERENCES forum(id)
+                );");
+
             $db->exec("
-                    INSERT INTO forum (ueberschrift, content) VALUES
-                        ('Überschrift 2', 'lorem ipsum 2')
-                    ;");
+                INSERT INTO forum (ueberschrift, content) VALUES
+                    ('Überschrift 1',  'Lorem ipsum 1')
+                ;");
             $db->exec("
-                    INSERT INTO forum (ueberschrift, content) VALUES
-                        ('Überschrift 3', 'lorem ipsum 3')
-                    ;");
+                INSERT INTO forum (ueberschrift, content) VALUES
+                    ('Überschrift 2', 'Lorem ipsum 2')
+                ;");
+            $db->exec("
+                INSERT INTO forum (ueberschrift, content) VALUES
+                    ('Überschrift 3', 'Lorem ipsum 3')
+                ;");
 
             unset($db);
         } catch (PDOException $e) {
-            // nothing
+            throw new InternerFehlerException($e->getMessage());
         }
     }
 }
