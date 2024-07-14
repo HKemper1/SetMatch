@@ -24,7 +24,7 @@ class ForumPDOSQLite implements ForumDAO
             if (!$command) {
                 throw new InternerFehlerException();
             }
-            if (!$command->execute([":ueberschrift" => $ueberschrift, ":content" => $text])) {
+            if (!$command->execute([":ueberschrift" => htmlspecialchars($ueberschrift, ENT_QUOTES, 'UTF-8'), ":content" => htmlspecialchars($text, ENT_QUOTES, 'UTF-8')])) {
                 throw new InternerFehlerException();
             }
             return intval($db->lastInsertId());
@@ -42,7 +42,7 @@ class ForumPDOSQLite implements ForumDAO
             if (!$command) {
                 throw new InternerFehlerException();
             }
-            if (!$command->execute([":id" => $id])) {
+            if (!$command->execute([":id" => intval($id)])) {
                 throw new InternerFehlerException();
             }
             $result = $command->fetchAll();
@@ -50,7 +50,7 @@ class ForumPDOSQLite implements ForumDAO
                 throw new FehlenderEintragException();
             }
             $entry = $result[0];
-            return new Eintrag($entry["id"], $entry["ueberschrift"], $entry["content"]);
+            return new Eintrag($entry["id"], htmlspecialchars($entry["ueberschrift"], ENT_QUOTES, 'UTF-8'), htmlspecialchars($entry["content"], ENT_QUOTES, 'UTF-8'));
         } catch (PDOException $exc) {
             throw new InternerFehlerException($exc->getMessage());
         }
@@ -67,7 +67,7 @@ class ForumPDOSQLite implements ForumDAO
                 $db->rollBack();
                 throw new InternerFehlerException();
             }
-            if (!$command->execute([":id" => $id])) {
+            if (!$command->execute([":id" => intval($id)])) {
                 $db->rollBack();
                 throw new InternerFehlerException();
             }
@@ -82,7 +82,7 @@ class ForumPDOSQLite implements ForumDAO
                 $db->rollBack();
                 throw new InternerFehlerException();
             }
-            if (!$command->execute([":id" => $id])) {
+            if (!$command->execute([":id" => intval($id)])) {
                 $db->rollBack();
                 throw new InternerFehlerException();
             }
@@ -111,7 +111,7 @@ class ForumPDOSQLite implements ForumDAO
 
             $entries = [];
             foreach ($result as $row) {
-                $entry = new Eintrag($row["id"], $row["ueberschrift"], $row["content"]);
+                $entry = new Eintrag($row["id"], htmlspecialchars($row["ueberschrift"], ENT_QUOTES, 'UTF-8'), htmlspecialchars($row["content"], ENT_QUOTES, 'UTF-8'));
                 $entries[] = $entry;
             }
             return $entries;
@@ -124,21 +124,28 @@ class ForumPDOSQLite implements ForumDAO
     {
         try {
             $db = $this->getConnection();
+            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
             $sql = "INSERT INTO comments (entry_id, comment_text, created_at) VALUES (:entry_id, :comment_text, :created_at)";
             $command = $db->prepare($sql);
             if (!$command) {
-                throw new InternerFehlerException();
+                throw new InternerFehlerException("Fehler bei der Vorbereitung der SQL-Anweisung.");
             }
-            if (!$command->execute([
-                ":entry_id" => $entryId,
-                ":comment_text" => $commentText,
-                ":created_at" => date('Y-m-d H:i:s')
-            ])) {
-                throw new InternerFehlerException();
+
+            $currentTime = date('Y-m-d H:i:s');
+            $params = [
+                ":entry_id" => intval($entryId),
+                ":comment_text" => htmlspecialchars($commentText, ENT_QUOTES, 'UTF-8'),
+                ":created_at" => $currentTime
+            ];
+
+            if (!$command->execute($params)) {
+                throw new InternerFehlerException("Fehler beim Ausführen der SQL-Anweisung.");
             }
+
             return intval($db->lastInsertId());
         } catch (PDOException $exc) {
-            throw new InternerFehlerException($exc->getMessage());
+            throw new InternerFehlerException("PDOException: " . $exc->getMessage());
         }
     }
 
@@ -151,10 +158,14 @@ class ForumPDOSQLite implements ForumDAO
             if (!$command) {
                 throw new InternerFehlerException();
             }
-            if (!$command->execute([":entry_id" => $entryId])) {
+            if (!$command->execute([":entry_id" => intval($entryId)])) {
                 throw new InternerFehlerException();
             }
-            return $command->fetchAll(PDO::FETCH_ASSOC);
+            $comments = $command->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($comments as &$comment) {
+                $comment['comment_text'] = htmlspecialchars($comment['comment_text'], ENT_QUOTES, 'UTF-8');
+            }
+            return $comments;
         } catch (PDOException $exc) {
             throw new InternerFehlerException($exc->getMessage());
         }
@@ -163,27 +174,33 @@ class ForumPDOSQLite implements ForumDAO
     private function getConnection()
     {
         global $abs_path;
-        if (!file_exists($abs_path . "/db/forum.db")) {
+        $dbPath = realpath($abs_path . "/db/forum.db");
+        if (!file_exists($dbPath)) {
             $this->anlegen();
         }
 
         try {
-            $user = null; // SQLite benötigt keine Benutzerdaten
-            $pw = null; // SQLite benötigt keine Passwörter
-            $dsn = 'sqlite:' . $abs_path . '/db/forum.db';
-            return new PDO($dsn, $user, $pw);
+            $user = null;
+            $pw = null;
+            $dsn = 'sqlite:' . $dbPath;
+
+            $db = new PDO($dsn, $user, $pw);
+            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            return $db;
         } catch (PDOException $e) {
-            throw new InternerFehlerException($e->getMessage());
+            throw new InternerFehlerException("Verbindung zur Datenbank fehlgeschlagen: " . $e->getMessage());
         }
     }
 
     private function anlegen()
     {
         global $abs_path;
+        $dbPath = realpath($abs_path . '/db/forum.db');
         try {
-            $user = null; // SQLite benötigt keine Benutzerdaten
-            $pw = null; // SQLite benötigt keine Passwörter
-            $dsn = 'sqlite:' . $abs_path . '/db/forum.db';
+            $user = null;
+            $pw = null;
+            $dsn = 'sqlite:' . $dbPath;
             $db = new PDO($dsn, $user, $pw);
 
             $db->exec("

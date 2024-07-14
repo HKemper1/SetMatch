@@ -18,7 +18,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $stmt->execute(['teamname' => $teamname, 'email' => $email, 'password' => $hashed_password]);
                 $db->commit();
 
-                // Benutzer nach erfolgreicher Registrierung anmelden
                 $_SESSION['user_id'] = $db->lastInsertId();
                 $_SESSION['teamname'] = $teamname;
                 $_SESSION['email'] = $email;
@@ -33,8 +32,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $db->rollBack();
             echo "Fehler: " . $e->getMessage();
         }
-    } else {
-        echo "Passwörter stimmen nicht überein!";
     }
 }
 ?>

@@ -29,13 +29,6 @@ require_once $abs_path . "/php/controller/index-controller.php";
             <h1>Willkommen!</h1>
             <p>Sie sind nicht angemeldet.</p>
         <?php endif; ?>
-        <h1>Team-Suche</h1>
-        <form id="searchForm">
-            <label for="searchInput">Suchbegriff:</label>
-            <input type="text" id="searchInput" name="searchInput">
-            <button type="submit">Suchen</button>
-        </form>
-        <div id="searchResults"></div>
     </section>
 
     <section class="anmContainer anmBody">
@@ -65,7 +58,9 @@ require_once $abs_path . "/php/controller/index-controller.php";
                         <div class="spaPost-content"><?= nl2br(htmlspecialchars($eintrag->getText())) ?></div>
                         <div class="spaPost-actions">
                             <a href="eintrag-anzeigen.php?id=<?= urlencode($eintrag->getId()) ?>">Anzeigen</a>
-                            <a href="php/controller/eintrag-loeschen-controller.php?id=<?= urlencode($eintrag->getId()) ?>">Löschen</a>
+                            <?php if (isset($_SESSION['teamname'])): ?>
+                                <a href="php/controller/eintrag-loeschen-controller.php?id=<?= urlencode($eintrag->getId()) ?>">Löschen</a>
+                            <?php endif; ?>
                         </div>
                         <div class="comments-section">
                             <div class="comments-list"></div>
@@ -103,68 +98,7 @@ require_once $abs_path . "/php/controller/index-controller.php";
 
 </main>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        document.querySelectorAll('.spaPost-block').forEach(block => {
-            const entryId = block.getAttribute('data-entry-id');
-            const commentsList = block.querySelector('.comments-list');
-            const newCommentTextarea = block.querySelector('.new-comment');
-            const addCommentButton = block.querySelector('.add-comment');
-
-            fetchComments(entryId, commentsList);
-
-            addCommentButton.addEventListener('click', () => {
-                const commentText = newCommentTextarea.value;
-                if (commentText) {
-                    postComment(entryId, commentText, commentsList, newCommentTextarea);
-                }
-            });
-        });
-
-        function fetchComments(entryId, commentsList) {
-            fetch(`php/controller/kommentar-laden.php`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                },
-                body: `entry_id=${entryId}`
-            })
-                .then(response => response.json())
-                .then(comments => {
-                    commentsList.innerHTML = '';
-                    comments.forEach(comment => {
-                        const commentDiv = document.createElement('div');
-                        commentDiv.classList.add('comment');
-                        commentDiv.textContent = comment.comment_text;
-                        commentsList.appendChild(commentDiv);
-                    });
-                });
-        }
-
-        function postComment(entryId, commentText, commentsList, newCommentTextarea) {
-            fetch('php/controller/kommentar-neu.php', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                },
-                body: `entry_id=${entryId}&comment_text=${encodeURIComponent(commentText)}`
-            })
-                .then(response => response.json())
-                .then(result => {
-                    if (result.success) {
-                        fetchComments(entryId, commentsList);
-                        newCommentTextarea.value = '';
-                    } else {
-                        alert('Kommentar konnte nicht hinzugefügt werden.');
-                    }
-                });
-        }
-    });
-
-</script>
-
-<?php include_once $abs_path . "/php/include/footer.php"; ?>
-<script src="js/suche.js"></script>
-<script src="js/kommentar.js"></script>
+<?php require_once $abs_path . "/php/include/footer.php"; ?>
+<script src = "js/kommentar.js"></script>
 </body>
 </html>

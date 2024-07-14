@@ -9,10 +9,5 @@ require_once $abs_path . "/db/db.php";
             $stmt->execute(['teamname' => $teamname]);
             $count = $stmt->fetchColumn();
 
-            if ($count > 0) {
-                echo 'taken';
-            } else {
-                echo 'available';
-            }
         }
         ?>

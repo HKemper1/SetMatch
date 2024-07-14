@@ -1,12 +1,15 @@
 <?php
-session_start(); // Sitzung starten
+session_start();
 
 if (!isset($abs_path)) {
     require_once "path.php";
 }
 require_once $abs_path . "/php/include/head.php";
 require_once $abs_path . "/db/db.php";
-require_once $abs_path . "/php/controller/Anmeldung.php";
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    require_once $abs_path . "/php/controller/Anmeldung.php";
+}
 ?>
 
 <body>
@@ -14,7 +17,7 @@ require_once $abs_path . "/php/controller/Anmeldung.php";
 <main>
     <div class="anmContainer anmBody">
         <section>
-            <h1>Anmelden</h1>
+            <h1>Anmeldung</h1>
             <form class="formContainerAnm" action="" method="POST">
                 <div>
                     <label class="labelAnm" for="teamname">Teamname</label>

@@ -1,20 +1,19 @@
 <?php
 try {
-    $db = new PDO('sqlite:User.db');
+    $db = new PDO('sqlite:' . realpath('User.db'));
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // Überprüfen und Tabelle 'users' erstellen, falls nicht vorhanden
+
     $db->exec("CREATE TABLE IF NOT EXISTS users (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         teamname TEXT,
         email TEXT,
         password TEXT,
         beschreibung TEXT,
-        bild_path TEXT, -- Pfad zum Bild, statt direkt den Dateinamen zu speichern
-        spieler JSON -- JSON für Spielerdaten
+        bild_path TEXT, 
+        spieler JSON 
     )");
 
-    // Testdaten einfügen, falls keine existieren
     $result = $db->query("SELECT COUNT(*) FROM users");
     $count = $result->fetchColumn();
     if ($count == 0) {
@@ -29,7 +28,6 @@ try {
         }
     }
 
-    // Tabelle für Kommentare erstellen, wenn nicht vorhanden
     $db->exec("CREATE TABLE IF NOT EXISTS comments (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         entry_id INTEGER NOT NULL,
@@ -43,9 +41,8 @@ try {
     exit();
 }
 
-// Suchfunktion (Beispielcode, wie sie verwendet werden könnte)
 if (isset($_GET['search'])) {
-    $searchTerm = $_GET['search'];
+    $searchTerm = filter_input(INPUT_GET, 'search', FILTER_SANITIZE_STRING);
     $stmt = $db->prepare("SELECT * FROM users WHERE teamname LIKE :searchTerm OR beschreibung LIKE :searchTerm");
     $stmt->execute(['searchTerm' => "%$searchTerm%"]);
     $teams = $stmt->fetchAll(PDO::FETCH_ASSOC);

@@ -18,51 +18,37 @@
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     border-radius: 25px;
 }
+
 .formContainerReg {
-    display: flex;
-    align-items: center; /* Elemente vertikal zentrieren */
+    margin-bottom: 15px;
 }
 
 .formContainerReg label {
-    display: flex; /* Text neben Checkbox ausrichten */
-    align-items: center; /* Text vertikal zentrieren */
+    display: block; /* Label über dem Input-Feld anzeigen */
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: black;
 }
 
 .formContainerReg input[type="checkbox"] {
     margin-right: 10px; /* Abstand zwischen Checkbox und Text */
 }
 
-.labelReg {
-    margin-bottom: 5px;
-    display: block;
-    font-weight: bold;
-    color: black;
-}
-
-.formContainerReg div {
-    margin-bottom: 15px;
-}
-
-
-.inputReg[type] {
-    width: 95%;
+.inputReg {
+    width: 100%;
     padding: 10px;
     font-size: 16px;
     border: 2px solid black;
     border-radius: 4px;
+    alignment: center;
 }
 
-.inputReg[type]:focus {
+.inputReg:focus {
     border-color: black;
 }
-
 
 .anmeldeLink {
     color: cornflowerblue;
     text-decoration: none;
-    margin-right: 15px;
-}
-
-.anmeldeLink:hover{
-    text-decoration: underline;
+    margin-right:5px;
 }

@@ -1,6 +1,6 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $teamname = $_POST['teamname'];
+    $teamname = filter_input(INPUT_POST, 'teamname', FILTER_SANITIZE_STRING);
     $password = $_POST['password'];
 
     try {
@@ -15,6 +15,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         } else {
             echo "Teamname oder Passwort falsch!";
         }
+    } catch (PDOException $e) {
+        echo "Datenbankfehler: " . $e->getMessage();
     } catch (Exception $e) {
         echo "Fehler: " . $e->getMessage();
     }

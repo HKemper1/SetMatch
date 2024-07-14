@@ -1,20 +1,17 @@
 <?php
-require_once 'php/model/ForumPDOSQLite.php';
+session_start();
+require_once "../../path.php";
+require_once $abs_path . "/php/controller/ForumPDOSQLite.php";
 
-header('Content-Type: application/json');
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $entry_id = $_POST['entry_id'];
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['entry_id'])) {
-    $entryId = intval($_POST['entry_id']);
-    $forum = ForumPDOSQLite::getInstance();
-
+    $forumDAO = ForumPDOSQLite::getInstance();
     try {
-        $comments = $forum->getKommentare($entryId);
+        $comments = $forumDAO->getKommentare($entry_id);
         echo json_encode($comments);
-    } catch (Exception $e) {
-        echo json_encode(['error' => $e->getMessage()]);
+    } catch (InternerFehlerException $e) {
+        echo json_encode([]);
     }
-} else {
-    echo json_encode(['error' => 'Ungültige Anfrage.']);
 }
 ?>
-

@@ -23,17 +23,31 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             body: `entry_id=${entryId}`
         })
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
             .then(comments => {
                 commentsList.innerHTML = '';
-                comments.forEach(comment => {
-                    const commentDiv = document.createElement('div');
-                    commentDiv.classList.add('comment');
-                    commentDiv.textContent = comment.comment_text;
-                    commentsList.appendChild(commentDiv);
-                });
+                if (comments.length === 0) {
+                    commentsList.innerHTML = '<p>Keine Kommentare vorhanden.</p>';
+                } else {
+                    comments.forEach(comment => {
+                        const commentDiv = document.createElement('div');
+                        commentDiv.classList.add('comment');
+                        commentDiv.textContent = comment.comment_text;
+                        commentsList.appendChild(commentDiv);
+                    });
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching comments:', error);
+                commentsList.innerHTML = '<p>Es ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.</p>';
             });
     }
+
 
     function postComment(entryId, commentText, commentsList, newCommentTextarea) {
         fetch('php/controller/kommentar-neu.php', {

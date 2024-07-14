@@ -13,8 +13,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
+    margin-bottom: 20px;
 }
-
 
 .teamInfo {
     margin: 10px;
@@ -24,33 +25,13 @@
     border: 2px solid black;
     display: flex;
     flex-direction:column;
-    flex-wrap: wrap; 
-}
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 
-.unsereStaerken {
-    display: flex;
-    flex-direction: column; /* Elemente vertikal anordnen */
-    align-items:center; /* Elemente horizontal zentrieren */
-}
-
-.unsereStaerken img {
-    padding-left: 50px;
-    padding-top: 50px;
-}
-
-.unsereStaerken label {
-    padding-top: 10px;
-    padding-left: 50px;
-}
-
-.star {
-    padding-top: 10px;
-    padding-left: 50px;
-}
-
-.star img{
-    padding-top: 5px;
-    padding-left: 5px;
+    max-width: 1000px;
 }
 
 .anfrageContainer {
@@ -62,4 +43,96 @@
 .anfrageContainer input {
     margin-left: 100px;
     margin-bottom: 25px;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+
+.img-container img {
+    border-radius: 150%;
+    max-width: 4000px;
+}
+
+form {
+    width: 150%;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input[type="text"], input[type="file"], textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+textarea {
+    height: 100px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.spieler {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    background: #fafafa;
+    text-align: center;
+}
+
+.spieler img {
+    display: block;
+    margin: 10px auto;
+    max-width: 200px;
+    border-radius: 200px;
+}
+
+.deleteSpielerButton {
+    background: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#addSpielerButton, input[type="submit"] {
+    background: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#addSpielerButton {
+    margin-top: 10px;
+    display: block;
+}
+
+.anfrageContainer h2 {
+    margin-bottom: 10px;
+}
+
+.button {
+    background: #2ecc71;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
 }
